@@ -21,6 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--color-dark);
   color: var(--color-white);
+  line-height: 1.7;
 }
 
 code {

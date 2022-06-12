@@ -31,12 +31,13 @@ function App() {
           </div>
 
           <div className="todo__form--item">
-            <label htmlFor="info">Additional Info</label>
+            <label htmlFor="info">Additional Info (Max 50)</label>
             <textarea
               id="info"
               placeholder="Enter addtional text for todo"
               cols="20"
               rows="5"
+              maxLength="50"
             ></textarea>
           </div>
 
@@ -52,10 +53,7 @@ function App() {
 
           <ul className="todo__list">
             <li className="todo__list--item">
-              <div>
-                <p className="item__name">Item Name</p>
-                {/* <p className="tag item__category">Important</p> */}
-              </div>
+              <p className="item__name">Item Name</p>
 
               <div className="item__date  ">
                 <svg>
@@ -71,41 +69,11 @@ function App() {
                   </svg>
                 </button>
                 <div className="info__tooltip">
-                  Lorem ipsum isque montes condimentum. nteger. Mollis vivamus
-                  iaculis condimentum orci primis ultrices luctus fringilla.
-                  Nascetur sociosqu natoque, convallis rhoncus primis at.
-                </div>
-                <button title="delete" className="item__action--delete">
-                  <svg>
-                    <use href={`${icons}#icon-delete`}></use>
-                  </svg>
-                </button>
-              </div>
-            </li>
-
-            <li className="todo__list--item">
-              <div>
-                <p className="item__name">Item Name</p>
-                {/* <p className="tag item__category">Important</p> */}
-              </div>
-
-              <div className="item__date  ">
-                <svg>
-                  <use href={`${icons}#icon-calendar`}></use>
-                </svg>
-                <p>12th July, 2022</p>
-              </div>
-
-              <div className="item__action">
-                <button title="info" className="item__action--info">
-                  <svg>
-                    <use href={`${icons}#icon-info`}></use>
-                  </svg>
-                </button>
-                <div className="info__tooltip">
-                  Lorem ipsum isque montes condimentum. nteger. Mollis vivamus
-                  iaculis condimentum orci primis ultrices luctus fringilla.
-                  Nascetur sociosqu natoque, convallis rhoncus primis at.
+                  <div className="info__tooltip--category">Important</div>
+                  <div className="info__tooltip--date">12th July, 2022</div>
+                  <div className="info__tooltip--text">
+                    Some text about the todo item that is being added.
+                  </div>
                 </div>
                 <button title="delete" className="item__action--delete">
                   <svg>
