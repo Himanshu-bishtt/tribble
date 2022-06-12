@@ -43,9 +43,6 @@
 
 .todo__items {
   justify-self: stretch;
-  // background-color: red;
-  // height: 20rem;
-  // width: 20rem;
 }
 
 .todo__items--heading {
@@ -92,6 +89,7 @@
 }
 
 .item__action {
+  position: relative;
   display: flex;
 
   & svg {
@@ -99,5 +97,36 @@
     width: 1.3rem;
     fill: var(--color-1);
     margin: 0 0.3rem;
+  }
+}
+
+.item__action--info:hover + .info__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.info__tooltip {
+  position: absolute;
+  top: 180%;
+  left: -18rem;
+  font-size: 1rem;
+  background-color: var(--color-dark);
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  width: 20rem;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    transform: rotate(45deg);
+    top: -5%;
+    left: 84%;
+    background-color: var(--color-dark);
   }
 }

@@ -65,12 +65,49 @@ function App() {
               </div>
 
               <div className="item__action">
-                <button title="info">
+                <button title="info" className="item__action--info">
                   <svg>
                     <use href={`${icons}#icon-info`}></use>
                   </svg>
                 </button>
-                <button title="delete">
+                <div className="info__tooltip">
+                  Lorem ipsum isque montes condimentum. nteger. Mollis vivamus
+                  iaculis condimentum orci primis ultrices luctus fringilla.
+                  Nascetur sociosqu natoque, convallis rhoncus primis at.
+                </div>
+                <button title="delete" className="item__action--delete">
+                  <svg>
+                    <use href={`${icons}#icon-delete`}></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li className="todo__list--item">
+              <div>
+                <p className="item__name">Item Name</p>
+                {/* <p className="tag item__category">Important</p> */}
+              </div>
+
+              <div className="item__date  ">
+                <svg>
+                  <use href={`${icons}#icon-calendar`}></use>
+                </svg>
+                <p>12th July, 2022</p>
+              </div>
+
+              <div className="item__action">
+                <button title="info" className="item__action--info">
+                  <svg>
+                    <use href={`${icons}#icon-info`}></use>
+                  </svg>
+                </button>
+                <div className="info__tooltip">
+                  Lorem ipsum isque montes condimentum. nteger. Mollis vivamus
+                  iaculis condimentum orci primis ultrices luctus fringilla.
+                  Nascetur sociosqu natoque, convallis rhoncus primis at.
+                </div>
+                <button title="delete" className="item__action--delete">
                   <svg>
                     <use href={`${icons}#icon-delete`}></use>
                   </svg>
