@@ -1,0 +1,34 @@
+.todo__form {
+  justify-self: stretch;
+}
+
+.todo__form--item {
+  padding: 1rem 5rem;
+  max-width: 100%;
+}
+
+.todo__form--item label {
+  font-size: 1rem;
+}
+
+.todo__form--item input,
+.todo__form--item select,
+.todo__form--item textarea {
+  margin-top: 0.5rem;
+  font-family: inherit;
+  border: none;
+  background: var(--color-white);
+  color: var(--color-dark);
+  width: stretch;
+  padding: 1rem 0.7rem;
+  border-radius: 5px;
+  font-size: 1rem;
+
+  &:focus {
+    outline: 2px solid var(--color-1);
+  }
+}
+
+.todo__form--submit {
+  background: #f9f7f6;
+}

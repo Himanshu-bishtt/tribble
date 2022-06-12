@@ -41,19 +41,3 @@ button {
   cursor: pointer;
   z-index: 1;
 }
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.btn {
-  outline: none;
-  border: none;
-  padding: 0.8rem 1rem;
-  border-radius: 5px;
-  font: inherit;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
