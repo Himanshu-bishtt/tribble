@@ -7,12 +7,17 @@ function App() {
         <form className="todo__form">
           <div className="todo__form--item">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" placeholder="Enter todo name"></input>
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter todo name"
+              required
+            ></input>
           </div>
 
           <div className="todo__form--item">
             <label htmlFor="category">Category</label>
-            <select id="category">
+            <select id="category" required>
               <option value="Important">Important</option>
               <option value="Entertainment">Entertainment</option>
               <option value="Sports">Sports</option>
@@ -21,7 +26,7 @@ function App() {
 
           <div className="todo__form--item">
             <label htmlFor="finish-date">Expected Finishing Date</label>
-            <input type="date" id="finish-date"></input>
+            <input type="date" id="finish-date" required></input>
           </div>
 
           <div className="todo__form--item">
