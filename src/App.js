@@ -1,4 +1,5 @@
 import "./App.scss";
+import icons from "./static/icons/icons.svg";
 
 function App() {
   return (
@@ -46,7 +47,38 @@ function App() {
           </div>
         </form>
 
-        <div className="todo__items"></div>
+        <div className="todo__items">
+          <h2 className="todo__items--heading">My Tasks</h2>
+
+          <ul className="todo__list">
+            <li className="todo__list--item">
+              <div>
+                <p className="item__name">Item Name</p>
+                {/* <p className="tag item__category">Important</p> */}
+              </div>
+
+              <div className="item__date  ">
+                <svg>
+                  <use href={`${icons}#icon-calendar`}></use>
+                </svg>
+                <p>12th July, 2022</p>
+              </div>
+
+              <div className="item__action">
+                <button title="info">
+                  <svg>
+                    <use href={`${icons}#icon-info`}></use>
+                  </svg>
+                </button>
+                <button title="delete">
+                  <svg>
+                    <use href={`${icons}#icon-delete`}></use>
+                  </svg>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

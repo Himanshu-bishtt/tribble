@@ -26,7 +26,7 @@
   border: none;
   background: var(--color-white);
   color: var(--color-dark);
-  width: fill;
+  width: stretch;
   padding: 1rem 0.7rem;
   border-radius: 5px;
   font-size: 1rem;
@@ -42,7 +42,62 @@
 }
 
 .todo__items {
-  background-color: red;
-  height: 20rem;
-  width: 20rem;
+  justify-self: stretch;
+  // background-color: red;
+  // height: 20rem;
+  // width: 20rem;
+}
+
+.todo__items--heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo__list--item {
+  padding: 1.3rem 1rem;
+  background-color: #333;
+  margin: 1rem 0rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-left: 3px solid var(--color-1);
+}
+
+.item__name {
+  font-size: 1rem;
+}
+
+.item__category {
+  font-size: 1rem;
+}
+
+.item__date {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 1rem;
+    margin: 0 0.2rem;
+  }
+
+  svg {
+    height: 1.3rem;
+    width: 1.3rem;
+    fill: var(--color-1);
+  }
+}
+
+.item__action {
+  display: flex;
+
+  & svg {
+    height: 1.3rem;
+    width: 1.3rem;
+    fill: var(--color-1);
+    margin: 0 0.3rem;
+  }
 }
