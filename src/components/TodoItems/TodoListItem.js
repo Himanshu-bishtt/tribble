@@ -25,7 +25,7 @@ function TodoListItem(props) {
         </button>
         <div className="info__tooltip">
           <div className="info__tooltip--category">{props.category}</div>
-          <div className="info__tooltip--date">{itemCreateDate}</div>
+          <div className="info__tooltip--date">Created: {itemCreateDate}</div>
           <div className="info__tooltip--text">{props.text}</div>
         </div>
         <button title="delete" className="item__action--delete">
