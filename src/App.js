@@ -1,6 +1,6 @@
-import Todo from "./components/Todo";
+import Todo from './components/Todo';
 
-import "./App.scss";
+import './App.scss';
 
 function App() {
   return <Todo />;

@@ -1,5 +1,5 @@
-import icons from "../../static/icons/icons.svg";
-import "./TodoListItem.scss";
+import icons from '../../static/icons/icons.svg';
+import './TodoListItem.scss';
 
 function TodoListItem(props) {
   const endDate = generateDate(props.endDate);
@@ -39,8 +39,8 @@ function TodoListItem(props) {
 }
 
 function generateDate(date) {
-  return `${date.getDate()}th ${date.toLocaleString("en-us", {
-    month: "long",
+  return `${date.getDate()}th ${date.toLocaleString('en-us', {
+    month: 'long',
   })}, ${date.getFullYear()}`;
 }
 

@@ -1,9 +1,9 @@
-import TodoListItem from "./TodoListItem";
+import TodoListItem from './TodoListItem';
 
 function TodoList(props) {
   return (
     <ul className="todo__list">
-      {props.todos.map((item) => (
+      {props.todos.map(item => (
         <TodoListItem
           name={item.name}
           endDate={item.finishingDate}

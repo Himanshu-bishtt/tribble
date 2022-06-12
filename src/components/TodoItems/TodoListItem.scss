@@ -59,13 +59,13 @@
   opacity: 0;
   visibility: hidden;
   transform: scale(0.8);
-  transition: all 0.5s;
+  transition: all 0.3s;
 
   &::after {
     position: absolute;
     top: -4%;
     left: 85%;
-    content: "";
+    content: '';
     height: 1rem;
     width: 1rem;
     transform: rotate(45deg);

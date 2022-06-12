@@ -1,6 +1,6 @@
-import TodoList from "./TodoList";
+import TodoList from './TodoList';
 
-import "./TodoItems.scss";
+import './TodoItems.scss';
 
 function TodoItems(props) {
   return (
