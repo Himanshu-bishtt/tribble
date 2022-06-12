@@ -103,6 +103,7 @@
 .item__action--info:hover + .info__tooltip {
   opacity: 1;
   visibility: visible;
+  transform: scale(1);
 }
 
 .info__tooltip {
@@ -117,6 +118,7 @@
   z-index: 2;
   opacity: 0;
   visibility: hidden;
+  transform: scale(0.8);
   transition: all 0.5s;
 
   &::after {
