@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import TodoForm from './TodoForm/TodoForm';
 import TodoItems from './TodoItems/TodoItems';
 
 import './Todo.scss';
-import { useState } from 'react';
 
 const TODO_ITEMS = [
   {
@@ -26,12 +26,19 @@ function Todo() {
 
     setTodoItems(prevTodos => [item, ...prevTodos]);
   };
+
+  const todoItemDeleteHandler = id => {
+    const itemIndex = todoItems.findIndex(item => item.id === id);
+
+    setTodoItems(prevTodos => [...prevTodos.splice(itemIndex, 1)]);
+  };
+
   return (
     <div className="container">
       <div className="todo">
         <TodoForm onFormSubmit={formSubmitHandler} />
 
-        <TodoItems todos={todoItems} />
+        <TodoItems todos={todoItems} onTodoItemDelete={todoItemDeleteHandler} />
       </div>
     </div>
   );

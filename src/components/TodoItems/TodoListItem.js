@@ -6,8 +6,12 @@ function TodoListItem(props) {
 
   const itemCreateDate = generateDate(props.date);
 
+  const deleteHandler = event => {
+    props.onTodoDelete(event.target.closest('.todo__list--item').dataset.id);
+  };
+
   return (
-    <li className="todo__list--item">
+    <li className="todo__list--item" data-id={props.id}>
       <p className="item__name">{props.name}</p>
 
       <div className="item__date">
@@ -28,7 +32,11 @@ function TodoListItem(props) {
           <div className="info__tooltip--date">Created: {itemCreateDate}</div>
           <div className="info__tooltip--text">{props.text}</div>
         </div>
-        <button title="delete" className="item__action--delete">
+        <button
+          title="delete"
+          className="item__action--delete"
+          onClick={deleteHandler}
+        >
           <svg>
             <use href={`${icons}#icon-delete`}></use>
           </svg>
