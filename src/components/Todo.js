@@ -28,9 +28,9 @@ function Todo() {
   };
 
   const todoItemDeleteHandler = id => {
-    const itemIndex = todoItems.findIndex(item => item.id === id);
+    // const itemIndex = todoItems.findIndex(item => item.id === id);
 
-    setTodoItems(prevTodos => [...prevTodos.splice(itemIndex, 1)]);
+    setTodoItems(prevTodos => [...prevTodos.filter(item => item.id !== id)]);
   };
 
   return (

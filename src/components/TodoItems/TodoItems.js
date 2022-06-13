@@ -17,7 +17,7 @@ function TodoItems(props) {
         {props.todos.length === 0 ? (
           <p className="todo__list--no-items">{NO_ITEMS_FOUND_MESSAGE}</p>
         ) : (
-          props.todos.map(item => (
+          props.todos.map((item, index) => (
             <TodoListItem
               key={item.id}
               id={item.id}
