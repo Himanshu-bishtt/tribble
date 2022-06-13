@@ -2,6 +2,12 @@
   justify-self: stretch;
 }
 
+.todo__form--btn {
+  background: var(--color-1);
+  align-self: center;
+  justify-items: center;
+}
+
 .todo__form--item {
   padding: 1rem 5rem;
   max-width: 100%;
@@ -31,4 +37,10 @@
 
 .todo__form--submit {
   background: var(--color-1);
+  margin-left: 1rem;
+}
+
+.todo__form--cancel {
+  background-color: #333;
+  color: #f3f3f3;
 }

@@ -82,19 +82,26 @@ function TodoForm(props) {
       </div>
 
       <div className="todo__form--item">
-        <label htmlFor="info">Additional Info (Max 50)</label>
+        <label htmlFor="info">Additional Info (Max 200)</label>
         <textarea
           onChange={infoHandler}
           id="info"
           placeholder="Enter addtional text for todo"
           cols="20"
           rows="5"
-          maxLength="50"
+          maxLength="200"
           value={textValue}
         ></textarea>
       </div>
 
       <div className="todo__form--item">
+        <button
+          className="btn todo__form--cancel"
+          type="button"
+          onClick={props.onFormCancel}
+        >
+          Cancel
+        </button>
         <button className="btn todo__form--submit" type="submit">
           Add Item
         </button>
