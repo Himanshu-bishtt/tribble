@@ -19,7 +19,8 @@ const TODO_ITEMS = [
     finishingDate: new Date(2022, 7, 23),
     category: 'Sports',
     creatingDate: new Date(),
-    description: 'Football practice with Uttrakhan FC.',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
   },
   {
     id: 'ID' + Math.ceil(Math.random() * 100000),
@@ -27,7 +28,8 @@ const TODO_ITEMS = [
     finishingDate: new Date(2022, 7, 31),
     category: 'Entertainment',
     creatingDate: new Date(),
-    description: 'Fortnite new season with food.',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
   },
 ];
 
