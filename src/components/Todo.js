@@ -4,9 +4,25 @@ import TodoItems from './TodoItems/TodoItems';
 
 import './Todo.scss';
 
-const TODO_ITEMS = [
+const generateRandomNumber = () => Math.ceil(Math.random() * 100000);
+
+const init = () => {
+  const data = JSON.parse(localStorage.getItem('items'));
+
+  if (!data) return;
+
+  TODO_ITEMS = data.map(item => {
+    return {
+      ...item,
+      finishingDate: new Date(item.finishingDate),
+      creatingDate: new Date(item.creatingDate),
+    };
+  });
+};
+
+let TODO_ITEMS = [
   {
-    id: 'ID' + Math.ceil(Math.random() * 100000),
+    id: 'ID' + generateRandomNumber(),
     name: 'Football Match',
     finishingDate: new Date(2022, 7, 15),
     category: 'Important',
@@ -14,7 +30,7 @@ const TODO_ITEMS = [
     description: 'Some text about the todo item that is being added.',
   },
   {
-    id: 'ID' + Math.ceil(Math.random() * 100000),
+    id: 'ID' + generateRandomNumber(),
     name: 'Football Practice',
     finishingDate: new Date(2022, 7, 23),
     category: 'Sports',
@@ -23,7 +39,7 @@ const TODO_ITEMS = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
   },
   {
-    id: 'ID' + Math.ceil(Math.random() * 100000),
+    id: 'ID' + generateRandomNumber(),
     name: 'Fornite with Harsh',
     finishingDate: new Date(2022, 7, 31),
     category: 'Entertainment',
@@ -34,17 +50,23 @@ const TODO_ITEMS = [
 ];
 
 function Todo() {
+  init();
+
   const [todoItems, setTodoItems] = useState(TODO_ITEMS);
 
   const [formShowing, setFormShowing] = useState(false);
 
+  localStorage.setItem('items', JSON.stringify(todoItems));
+
   const formSubmitHandler = todo => {
     const item = {
-      id: 'ID' + Math.ceil(Math.random() * 100000),
+      id: 'ID' + generateRandomNumber(),
       ...todo,
     };
 
     setTodoItems(prevTodos => [item, ...prevTodos]);
+
+    localStorage.setItem('items', JSON.stringify(todoItems));
 
     setFormShowing(false);
   };
