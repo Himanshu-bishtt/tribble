@@ -90,6 +90,11 @@
   transform: scale(0.8);
   transition: all 0.3s;
 
+  @media only screen and (max-width: 30em) {
+    width: 15rem;
+    left: -14rem;
+  }
+
   &::after {
     position: absolute;
     top: -4%;

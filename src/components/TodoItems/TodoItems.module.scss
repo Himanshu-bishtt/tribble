@@ -1,5 +1,10 @@
 .todo__items {
   justify-self: stretch;
+
+  @media only screen and (max-width: 30em) {
+    justify-self: auto;
+    width: max-content;
+  }
 }
 
 .todo__items--heading {
@@ -14,7 +19,7 @@
 
 .todo__list {
   @media only screen and (max-width: 30em) {
-    margin: 0 2rem;
+    // margin: 0 2rem;
   }
 }
 
