@@ -16,6 +16,15 @@
 
 .item__name {
   font-size: 1rem;
+  width: 13rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  @media only screen and (max-width: 30em) {
+    font-size: 0.8rem;
+    width: 8rem;
+  }
 }
 
 .item__category {
@@ -25,16 +34,27 @@
 .item__date {
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 10rem;
 
   p {
     font-size: 1rem;
     margin: 0 0.2rem;
+
+    @media only screen and (max-width: 30em) {
+      font-size: 0.8rem;
+    }
   }
 
   svg {
     height: 1.3rem;
     width: 1.3rem;
     fill: var(--color-1);
+
+    @media only screen and (max-width: 30em) {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
   }
 }
 
