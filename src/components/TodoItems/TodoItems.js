@@ -1,6 +1,6 @@
 import TodoListItem from '../TodoItems/TodoListItem';
 
-import './TodoItems.scss';
+import styles from './TodoItems.module.scss';
 
 function TodoItems(props) {
   const NO_ITEMS_FOUND_MESSAGE = 'No Items Found!!';
@@ -10,12 +10,14 @@ function TodoItems(props) {
   };
 
   return (
-    <div className="todo__items">
-      <h2 className="todo__items--heading">My Tasks</h2>
+    <div className={styles['todo__items']}>
+      <h2 className={styles['todo__items--heading']}>My Tasks</h2>
 
-      <ul className="todo__list">
+      <ul className={styles['todo__list']}>
         {props.todos.length === 0 ? (
-          <p className="todo__list--no-items">{NO_ITEMS_FOUND_MESSAGE}</p>
+          <p className={styles['todo__list--no-items']}>
+            {NO_ITEMS_FOUND_MESSAGE}
+          </p>
         ) : (
           props.todos.map((item, index) => (
             <TodoListItem
