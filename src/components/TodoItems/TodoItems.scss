@@ -5,6 +5,16 @@
 .todo__items--heading {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+
+  @media only screen and (max-width: 30em) {
+    text-align: center;
+  }
+}
+
+.todo__list {
+  @media only screen and (max-width: 30em) {
+    margin: 0 2rem;
+  }
 }
 
 .todo__list--no-items {

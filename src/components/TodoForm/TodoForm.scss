@@ -11,6 +11,10 @@
 .todo__form--item {
   padding: 1rem 5rem;
   max-width: 100%;
+
+  @media only screen and (max-width: 30em) {
+    padding: 1rem 3rem;
+  }
 }
 
 .todo__form--item label {
