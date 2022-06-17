@@ -11,7 +11,9 @@ function TodoItems(props) {
 
   return (
     <div className={styles['todo__items']}>
-      <h2 className={styles['todo__items--heading']}>My Tasks</h2>
+      <h2 className={styles['todo__items--heading']}>
+        My {props.todos.length} Tasks
+      </h2>
 
       <ul className={styles['todo__list']}>
         {props.todos.length === 0 ? (

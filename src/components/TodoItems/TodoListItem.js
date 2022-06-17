@@ -11,7 +11,10 @@ function TodoListItem(props) {
   };
 
   return (
-    <li className={styles['todo__list--item']} data-id={props.id}>
+    <li
+      className={`todo__list--item ${styles['todo__list--item']}`}
+      data-id={props.id}
+    >
       <p className={styles['item__name']} title={props.name}>
         {props.name}
       </p>
