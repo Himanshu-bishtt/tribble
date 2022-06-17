@@ -2,16 +2,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.3rem 1rem;
+  padding: 1.4rem 1rem;
   background-color: #333;
-  margin: 1rem 0rem;
-  border-radius: 5px;
+  margin: 1.5rem 0rem;
+  border-radius: 10px;
   font-size: 1.2rem;
-  border-left: 3px solid var(--color-1);
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
 
   @media only screen and (max-width: 30em) {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    padding: 1.2rem 0.8rem;
   }
+}
+
+.todo__list--item.important {
+  border-left: 4px solid red;
+}
+
+.todo__list--item.sports {
+  border-left: 4px solid var(--color-1);
+}
+
+.todo__list--item.entertainment {
+  border-left: 4px solid green;
 }
 
 .item__name {
@@ -25,10 +38,6 @@
     font-size: 0.8rem;
     width: 8rem;
   }
-}
-
-.item__category {
-  font-size: 1rem;
 }
 
 .item__date {
@@ -49,13 +58,24 @@
   svg {
     height: 1.3rem;
     width: 1.3rem;
-    fill: var(--color-1);
 
     @media only screen and (max-width: 30em) {
       height: 1.2rem;
       width: 1.2rem;
     }
   }
+}
+
+.item__date.important svg {
+  fill: red;
+}
+
+.item__date.sports svg {
+  fill: var(--color-1);
+}
+
+.item__date.entertainment svg {
+  fill: green;
 }
 
 .item__action {
@@ -65,7 +85,7 @@
   & svg {
     height: 1.3rem;
     width: 1.3rem;
-    fill: var(--color-1);
+    fill: #f3f3f3;
     margin: 0 0.3rem;
 
     @media only screen and (max-width: 30em) {
@@ -120,12 +140,23 @@
 
 .info__tooltip--category {
   margin: 0.7rem 0;
-  background-color: rgb(219, 13, 13);
   display: inline-block;
   padding: 0.2rem 0.4rem;
   font-size: 0.8rem;
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.5);
   border-radius: 7px;
+}
+
+.info__tooltip--category.important {
+  background-color: red;
+}
+
+.info__tooltip--category.sports {
+  background-color: var(--color-1);
+}
+
+.info__tooltip--category.entertainment {
+  background-color: green;
 }
 
 .info__tooltip--text {

@@ -11,16 +11,22 @@ function TodoListItem(props) {
     // props.onTodoDelete(event.target.closest('.todo__list--item').dataset.id);
   };
 
+  let category;
+
+  if (props.category === 'Important') category = 'important';
+  if (props.category === 'Sports') category = 'sports';
+  if (props.category === 'Entertainment') category = 'entertainment';
+
   return (
     <li
-      className={`todo__list--item ${styles['todo__list--item']}`}
+      className={`${styles['todo__list--item']} ${styles[category]}`}
       data-id={props.id}
     >
       <p className={styles['item__name']} title={props.name}>
         {props.name}
       </p>
 
-      <div className={styles['item__date']}>
+      <div className={`${styles['item__date']} ${styles[category]}`}>
         <svg>
           <use href={`${icons}#icon-calendar`}></use>
         </svg>
@@ -34,13 +40,17 @@ function TodoListItem(props) {
           </svg>
         </button>
         <div className={styles['info__tooltip']}>
-          <div className={styles['info__tooltip--category']}>
+          <div
+            className={`${styles['info__tooltip--category']} ${styles[category]}`}
+          >
             {props.category}
           </div>
           <div className={styles['info__tooltip--date']}>
             Created: {itemCreateDate}
           </div>
-          <div className={styles['info__tooltip--text']}>{props.text}</div>
+          <div className={styles['info__tooltip--text']}>
+            {props.text || 'No info provided.'}
+          </div>
         </div>
         <button
           title="delete"
