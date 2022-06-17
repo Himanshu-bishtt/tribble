@@ -6,8 +6,9 @@ function TodoListItem(props) {
 
   const itemCreateDate = generateDate(props.date);
 
-  const deleteHandler = event => {
-    props.onTodoDelete(event.target.closest('.todo__list--item').dataset.id);
+  const deleteHandler = () => {
+    props.onTodoDelete(props.id);
+    // props.onTodoDelete(event.target.closest('.todo__list--item').dataset.id);
   };
 
   return (
