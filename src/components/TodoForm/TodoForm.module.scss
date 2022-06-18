@@ -19,6 +19,7 @@
 
 .todo__form--item label {
   font-size: 1rem;
+  transition: color 0.5s;
 }
 
 .todo__form--item input,
@@ -33,11 +34,27 @@
   padding: 1rem 0.7rem;
   border-radius: 5px;
   font-size: 1rem;
+  transition: background-color 0.5s;
 
   &:focus {
     outline: 2px solid var(--color-1);
   }
 }
+
+/////////////////////////////////////////////////////////////
+
+///  label and input change when invalid input
+.todo__form--item.invalid label[for='name'],
+.todo__form--item.invalid label[for='finish-date'] {
+  color: red;
+}
+
+.todo__form--item.invalid input[type='text'],
+.todo__form--item.invalid input[type='date'] {
+  outline: 2px solid red;
+}
+
+///////////////////////////////////////////////////////////////
 
 .todo__form--submit {
   background: var(--color-1);

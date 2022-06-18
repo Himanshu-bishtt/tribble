@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './TodoForm.scss';
+import styles from './TodoForm.module.scss';
 
 function TodoForm(props) {
   const [nameValue, setNameValue] = useState('');
@@ -7,7 +7,11 @@ function TodoForm(props) {
   const [dateValue, setDateValue] = useState('');
   const [textValue, setTextValue] = useState('');
 
+  const [isNameValid, setIsNameValid] = useState(true);
+  const [isDateValid, setIsDateValid] = useState(true);
+
   const nameHandler = event => {
+    if (event.target.value.trim().length > 0) setIsNameValid(true);
     setNameValue(event.target.value);
   };
 
@@ -16,6 +20,7 @@ function TodoForm(props) {
   };
 
   const dateHandler = event => {
+    if (event.target.value.trim().length > 0) setIsDateValid(true);
     setDateValue(event.target.value);
   };
 
@@ -25,6 +30,18 @@ function TodoForm(props) {
 
   const submitHandler = event => {
     event.preventDefault();
+
+    if (nameValue.trim().length === 0) {
+      console.log('Invalid name input');
+      setIsNameValid(false);
+      return;
+    }
+
+    if (dateValue.trim().length === 0) {
+      console.log('Invalid date input');
+      setIsDateValid(false);
+      return;
+    }
 
     const todo = {
       name: nameValue,
@@ -43,45 +60,46 @@ function TodoForm(props) {
   };
 
   return (
-    <form className="todo__form" onSubmit={submitHandler}>
-      <div className="todo__form--item">
-        <label htmlFor="name">Name</label>
+    <form className={styles['todo__form']} onSubmit={submitHandler}>
+      <div
+        className={`${styles['todo__form--item']} ${
+          isNameValid ? '' : styles['invalid']
+        }`}
+      >
+        <label htmlFor="name">Name*</label>
         <input
           onChange={nameHandler}
           type="text"
           id="name"
           placeholder="Enter todo name"
           value={nameValue}
-          required
         ></input>
       </div>
 
-      <div className="todo__form--item">
-        <label htmlFor="category">Category</label>
-        <select
-          value={optionValue}
-          onChange={selectHandler}
-          id="category"
-          required
-        >
+      <div className={styles['todo__form--item']}>
+        <label htmlFor="category">Category*</label>
+        <select value={optionValue} onChange={selectHandler} id="category">
           <option value="Important">Important</option>
           <option value="Entertainment">Entertainment</option>
           <option value="Sports">Sports</option>
         </select>
       </div>
 
-      <div className="todo__form--item">
-        <label htmlFor="finish-date">Expected Finishing Date</label>
+      <div
+        className={`${styles['todo__form--item']} ${
+          isDateValid ? '' : styles['invalid']
+        }`}
+      >
+        <label htmlFor="finish-date">Expected Finishing Date*</label>
         <input
           onChange={dateHandler}
           type="date"
           id="finish-date"
           value={dateValue}
-          required
         ></input>
       </div>
 
-      <div className="todo__form--item">
+      <div className={styles['todo__form--item']}>
         <label htmlFor="info">Additional Info (Max 200)</label>
         <textarea
           onChange={infoHandler}
@@ -94,15 +112,15 @@ function TodoForm(props) {
         ></textarea>
       </div>
 
-      <div className="todo__form--item">
+      <div className={styles['todo__form--item']}>
         <button
-          className="btn todo__form--cancel"
+          className={`btn ${styles['todo__form--cancel']}`}
           type="button"
           onClick={props.onFormCancel}
         >
           Cancel
         </button>
-        <button className="btn todo__form--submit" type="submit">
+        <button className={`btn ${styles['todo__form--submit']}`} type="submit">
           Add Item
         </button>
       </div>

@@ -3,6 +3,7 @@ import TodoForm from '../TodoForm/TodoForm';
 import TodoItems from '../TodoItems/TodoItems';
 
 import './Todo.scss';
+import styles from '../TodoForm/TodoForm.module.scss';
 
 const generateRandomNumber = () => Math.ceil(Math.random() * 100000);
 
@@ -87,7 +88,10 @@ function Todo() {
     <div className="container">
       <div className="todo">
         {!formShowing ? (
-          <button className="btn todo__form--btn" onClick={showFormHandler}>
+          <button
+            className={`btn ${styles['todo__form--btn']}`}
+            onClick={showFormHandler}
+          >
             Add New Todo
           </button>
         ) : (
