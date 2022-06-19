@@ -1,13 +1,13 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import Header from '../Header/Header';
 import Todo from '../Todo/Todo';
 
 const Main = () => {
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
-  const todoItemDeleteButtonHandler = flag => {
-    setShowModal(prev => !prev);
-  };
+  // const todoItemDeleteButtonHandler = flag => {
+  //   setShowModal(prev => !prev);
+  // };
 
   // const modalCancelButtonHandler = flag => {
   //   console.log(flag);
@@ -20,7 +20,7 @@ const Main = () => {
   return (
     <div className="app">
       <Header />
-      <Todo onTodoItemDeleteClick={todoItemDeleteButtonHandler} />
+      <Todo />
       {/* <Modal
         showModal={showModal}
         setShowModal={setShowModal}
