@@ -3,6 +3,10 @@
 
   --color-dark: #101010;
   --color-white: #f3f3f3;
+
+  --color-important: red;
+  --color-sports: var(--color-1);
+  --color-entertainment: green;
 }
 
 *,

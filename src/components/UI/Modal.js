@@ -1,17 +1,16 @@
 import Backdrop from './Backdrop';
 import styles from './Modal.module.scss';
 
-const Modal = ({ showModal, setShowModal }) => {
+const Modal = ({ showModal, setShowModal, onCancel, onDelete }) => {
   const cancelHandler = () => {
-    console.log('Popup cancel button clicked');
-    setShowModal(false);
-
-    return false;
+    setShowModal(prev => !prev);
+    onCancel(false);
   };
 
   const deleteHandler = () => {
     console.log('Popup delete button clicked');
-    return true;
+    setShowModal(prev => !prev);
+    onDelete(true);
   };
 
   const backdropHandler = condition => {
@@ -19,12 +18,11 @@ const Modal = ({ showModal, setShowModal }) => {
   };
 
   return (
-    <div>
-      <div
-        className={`${styles['popup']} ${
-          showModal ? '' : styles['popup__remove']
-        }`}
-      >
+    <Backdrop
+      className={showModal ? '' : 'backdrop__remove'}
+      onBackdropClick={backdropHandler}
+    >
+      <div className={`${styles['popup']} `}>
         <div className={styles['popup__message']}>Are you sure?</div>
         <div className={styles['popup__button']}>
           <button
@@ -41,11 +39,7 @@ const Modal = ({ showModal, setShowModal }) => {
           </button>
         </div>
       </div>
-      <Backdrop
-        className={showModal ? '' : 'backdrop__remove'}
-        onBackdropClick={backdropHandler}
-      />
-    </div>
+    </Backdrop>
   );
 };
 
