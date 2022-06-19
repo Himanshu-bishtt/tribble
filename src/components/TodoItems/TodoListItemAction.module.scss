@@ -1,0 +1,84 @@
+.item__action {
+  position: relative;
+  display: flex;
+
+  & svg {
+    height: 1.3rem;
+    width: 1.3rem;
+    fill: var(--color-white);
+    margin: 0 0.3rem;
+
+    @media only screen and (max-width: 30em) {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+  }
+}
+
+.info__tooltip {
+  position: absolute;
+  top: 150%;
+  left: -19rem;
+  font-size: 1rem;
+  background-color: var(--color-dark);
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  width: 21rem;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: all 0.3s;
+
+  @media only screen and (max-width: 30em) {
+    width: 15rem;
+    left: -14rem;
+  }
+
+  &::after {
+    position: absolute;
+    top: -4%;
+    left: 85%;
+    content: '';
+    height: 1rem;
+    width: 1rem;
+    transform: rotate(45deg);
+    background-color: var(--color-dark);
+  }
+}
+
+.item__action--info:hover + .info__tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.info__tooltip--date {
+  font-size: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.info__tooltip--category {
+  margin: 0.7rem 0;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+}
+
+.info__tooltip--category.important {
+  background-color: var(--color-important);
+}
+
+.info__tooltip--category.sports {
+  background-color: var(--color-sports);
+}
+
+.info__tooltip--category.entertainment {
+  background-color: var(--color-entertainment);
+}
+
+.info__tooltip--text {
+  font-size: 0.9rem;
+}

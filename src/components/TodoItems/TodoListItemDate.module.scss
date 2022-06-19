@@ -1,0 +1,37 @@
+.item__date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+
+  p {
+    font-size: 1rem;
+    margin: 0 0.2rem;
+
+    @media only screen and (max-width: 30em) {
+      font-size: 0.8rem;
+    }
+  }
+
+  svg {
+    height: 1.3rem;
+    width: 1.3rem;
+
+    @media only screen and (max-width: 30em) {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+  }
+}
+
+.item__date.important svg {
+  fill: var(--color-important);
+}
+
+.item__date.sports svg {
+  fill: var(--color-sports);
+}
+
+.item__date.entertainment svg {
+  fill: var(--color-entertainment);
+}
