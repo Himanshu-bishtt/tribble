@@ -1,7 +1,7 @@
 .popup {
-  background-color: red;
+  background-color: #333;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 2rem 1rem;
@@ -23,7 +23,7 @@
 }
 
 .popup__button--cancel {
-  background-color: #333;
+  background-color: rgba(20, 20, 20, 0.993);
   color: #f3f3f3;
 }
 .popup__button--ok {
