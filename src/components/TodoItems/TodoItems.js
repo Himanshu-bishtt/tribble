@@ -9,6 +9,10 @@ function TodoItems(props) {
     props.onTodoItemDelete(id);
   };
 
+  const deleteButtonClickedHandler = flag => {
+    props.onTodoDeleteButtonClicked(flag);
+  };
+
   return (
     <div className={styles['todo__items']}>
       <h2 className={styles['todo__items--heading']}>
@@ -31,6 +35,7 @@ function TodoItems(props) {
               date={item.creatingDate}
               text={item.description}
               onTodoDelete={todoDeleteHandler}
+              onDeleteButtonClicked={deleteButtonClickedHandler}
             />
           ))
         )}

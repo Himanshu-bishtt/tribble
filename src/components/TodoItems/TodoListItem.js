@@ -7,10 +7,12 @@ function TodoListItem(props) {
   const itemCreateDate = generateDate(props.date);
 
   const deleteHandler = () => {
-    window.confirm('Are you sure?')
-      ? props.onTodoDelete(props.id)
-      : alert('You cancelled');
+    // window.confirm('Are you sure?')
+    //   ? props.onTodoDelete(props.id)
+    //   : alert('You cancelled');
     // props.onTodoDelete(event.target.closest('.todo__list--item').dataset.id);
+
+    props.onDeleteButtonClicked(true);
   };
 
   let category;
