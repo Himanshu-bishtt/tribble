@@ -1,15 +1,8 @@
-import Header from './components/Header/Header';
-import Todo from './components/Todo/Todo';
-
 import './App.scss';
+import Main from './components/Main/Main';
 
 function App() {
-  return (
-    <div className="app">
-      <Header />
-      <Todo />
-    </div>
-  );
+  return <Main />;
 }
 
 export default App;
