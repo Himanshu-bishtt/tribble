@@ -1,4 +1,4 @@
-import TodoListItem from '../TodoItems/TodoListItem';
+import TodoListItem from './TodoListItem/TodoListItem';
 
 import styles from './TodoItems.module.scss';
 

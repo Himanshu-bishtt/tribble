@@ -1,6 +1,6 @@
 import React from 'react';
 
-import icons from '../../static/icons/icons.svg';
+import icons from '../../../static/icons/icons.svg';
 import styles from './TodoListItemAction.module.scss';
 
 const TodoListItemAction = props => {

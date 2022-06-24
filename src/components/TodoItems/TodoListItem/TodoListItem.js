@@ -13,7 +13,6 @@ const TodoListItem = props => {
   const curDate = new Date();
 
   const daysLeft = calcDaysLeft(curDate, props.endDate);
-  // const daysLeft = 1;
 
   calcDaysLeft(curDate, props.endDate);
 
@@ -53,9 +52,6 @@ const generateDate = date => {
     }
   )}, ${date.getFullYear()}`;
 };
-
-// const calcDaysLeft = (date1, date2) =>
-//   Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
 const calcDaysLeft = (curDate, prevDate) =>
   Math.ceil((prevDate - curDate) / (1000 * 60 * 60 * 24));
