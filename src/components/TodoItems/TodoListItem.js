@@ -12,7 +12,10 @@ const TodoListItem = props => {
 
   const curDate = new Date();
 
-  const daysPassed = calcDaysPassed(props.endDate, curDate);
+  const daysLeft = calcDaysLeft(curDate, props.endDate);
+  // const daysLeft = 1;
+
+  calcDaysLeft(curDate, props.endDate);
 
   const itemDeleteHandler = id => {
     props.onTodoDelete(id);
@@ -25,9 +28,7 @@ const TodoListItem = props => {
       }`}
       data-id={props.id}
     >
-      {daysPassed <= 7 ? (
-        <TodoListItemAlertDate daysPassed={daysPassed} />
-      ) : null}
+      {daysLeft <= 7 ? <TodoListItemAlertDate daysLeft={daysLeft} /> : null}
 
       <TodoListItemName name={props.name} />
 
@@ -53,7 +54,10 @@ const generateDate = date => {
   )}, ${date.getFullYear()}`;
 };
 
-const calcDaysPassed = (date1, date2) =>
-  Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+// const calcDaysLeft = (date1, date2) =>
+//   Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+
+const calcDaysLeft = (curDate, prevDate) =>
+  Math.ceil((prevDate - curDate) / (1000 * 60 * 60 * 24));
 
 export default TodoListItem;
