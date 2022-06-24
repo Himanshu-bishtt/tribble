@@ -1,12 +1,18 @@
-import styles from './TodoListItem.module.scss';
-import TodoListItemAction from './TodoListItemAction';
-import TodoListItemDate from './TodoListItemDate';
+import TodoListItemAlertDate from './TodoListItemAlertDate';
 import TodoListItemName from './TodoListItemName';
+import TodoListItemDate from './TodoListItemDate';
+import TodoListItemAction from './TodoListItemAction';
+
+import styles from './TodoListItem.module.scss';
 
 const TodoListItem = props => {
   const endDate = generateDate(props.endDate);
 
   const itemCreateDate = generateDate(props.date);
+
+  const curDate = new Date();
+
+  const daysPassed = calcDaysPassed(props.endDate, curDate);
 
   const itemDeleteHandler = id => {
     props.onTodoDelete(id);
@@ -19,6 +25,10 @@ const TodoListItem = props => {
       }`}
       data-id={props.id}
     >
+      {daysPassed <= 7 ? (
+        <TodoListItemAlertDate daysPassed={daysPassed} />
+      ) : null}
+
       <TodoListItemName name={props.name} />
 
       <TodoListItemDate endDate={endDate} category={props.category} />
@@ -42,5 +52,8 @@ const generateDate = date => {
     }
   )}, ${date.getFullYear()}`;
 };
+
+const calcDaysPassed = (date1, date2) =>
+  Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
 export default TodoListItem;
