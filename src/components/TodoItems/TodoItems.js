@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import TodoListItem from './TodoListItem/TodoListItem';
-import Modal from '../UI/Modal';
+// import Modal from '../UI/Modal';
 
 import styles from './TodoItems.module.scss';
 
@@ -21,7 +21,7 @@ function TodoItems(props) {
       </h2>
 
       {/* Todo Modal */}
-      {modal && <Modal onCancel={showModal} />}
+      {/* {modal && <Modal onCancel={showModal} />} */}
 
       {/* Displaying list items */}
       <ul className={styles['todo__list']}>

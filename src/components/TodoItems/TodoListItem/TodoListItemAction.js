@@ -5,8 +5,8 @@ import styles from './TodoListItemAction.module.scss';
 
 const TodoListItemAction = props => {
   const deleteHandler = () => {
-    // window.confirm('Are you sure?') && props.onItemDelete(props.id);
-    props.showModal(prev => !prev);
+    window.confirm('Are you sure?') && props.onItemDelete(props.id);
+    // props.showModal(prev => !prev);
   };
 
   return (
