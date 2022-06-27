@@ -14,8 +14,6 @@ const TodoListItem = props => {
 
   const daysLeft = calcDaysLeft(curDate, props.endDate);
 
-  calcDaysLeft(curDate, props.endDate);
-
   const itemDeleteHandler = id => {
     props.onTodoDelete(id);
   };
@@ -39,6 +37,7 @@ const TodoListItem = props => {
         category={props.category}
         text={props.text}
         onItemDelete={itemDeleteHandler}
+        showModal={props.showModal}
       />
     </li>
   );

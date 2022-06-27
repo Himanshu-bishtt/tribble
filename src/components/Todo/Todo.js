@@ -76,10 +76,6 @@ function Todo(props) {
     setTodoItems(prevTodos => [...prevTodos.filter(item => item.id !== id)]);
   };
 
-  const todoItemDeleteButtonHandler = flag => {
-    props.onTodoItemDeleteClick(flag);
-  };
-
   const showFormHandler = () => {
     setFormShowing(true);
   };
@@ -105,11 +101,7 @@ function Todo(props) {
           />
         )}
 
-        <TodoItems
-          todos={todoItems}
-          onTodoItemDelete={todoItemDeleteHandler}
-          onTodoDeleteButtonClicked={todoItemDeleteButtonHandler}
-        />
+        <TodoItems todos={todoItems} onTodoItemDelete={todoItemDeleteHandler} />
       </div>
     </div>
   );

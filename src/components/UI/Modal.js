@@ -1,27 +1,14 @@
-import Backdrop from './Backdrop';
 import styles from './Modal.module.scss';
 
-const Modal = ({ showModal, setShowModal, onCancel, onDelete }) => {
+const Modal = props => {
   const cancelHandler = () => {
-    setShowModal(prev => !prev);
-    onCancel(false);
+    props.onCancel(prev => !prev);
   };
 
-  const deleteHandler = () => {
-    console.log('Popup delete button clicked');
-    setShowModal(prev => !prev);
-    onDelete(true);
-  };
-
-  const backdropHandler = condition => {
-    setShowModal(!condition);
-  };
-
+  const deleteHandler = () => {};
   return (
-    <Backdrop
-      className={showModal ? '' : 'backdrop__remove'}
-      onBackdropClick={backdropHandler}
-    >
+    <div>
+      <div className={styles['backdrop']} onClick={cancelHandler}></div>
       <div className={`${styles['popup']} `}>
         <div className={styles['popup__message']}>Are you sure?</div>
         <div className={styles['popup__button']}>
@@ -39,7 +26,7 @@ const Modal = ({ showModal, setShowModal, onCancel, onDelete }) => {
           </button>
         </div>
       </div>
-    </Backdrop>
+    </div>
   );
 };
 
