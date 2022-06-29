@@ -1,13 +1,13 @@
-// import { useState } from 'react';
+import React from 'react';
 import Header from '../Header/Header';
 import Todo from '../Todo/Todo';
 
 const Main = () => {
   return (
-    <div className="app">
+    <React.Fragment>
       <Header />
       <Todo />
-    </div>
+    </React.Fragment>
   );
 };
 

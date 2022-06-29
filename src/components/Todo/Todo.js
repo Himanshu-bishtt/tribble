@@ -50,7 +50,7 @@ let TODO_ITEMS = [
   },
 ];
 
-function Todo(props) {
+function Todo() {
   init();
 
   const [todoItems, setTodoItems] = useState(TODO_ITEMS);
