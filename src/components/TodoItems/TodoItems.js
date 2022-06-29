@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import TodoListItem from './TodoListItem/TodoListItem';
-// import Modal from '../UI/Modal';
 
 import styles from './TodoItems.module.scss';
 
 function TodoItems(props) {
-  const [modal, showModal] = useState(false);
   const NO_ITEMS_FOUND_MESSAGE = 'No Items Found!!';
 
   const todoDeleteHandler = id => {
@@ -19,9 +17,6 @@ function TodoItems(props) {
       <h2 className={styles['todo__items--heading']}>
         My {props.todos.length} Tasks
       </h2>
-
-      {/* Todo Modal */}
-      {/* {modal && <Modal onCancel={showModal} />} */}
 
       {/* Displaying list items */}
       <ul className={styles['todo__list']}>
@@ -40,8 +35,6 @@ function TodoItems(props) {
               date={item.creatingDate}
               text={item.description}
               onTodoDelete={todoDeleteHandler}
-              modal={modal}
-              showModal={showModal}
             />
           ))
         )}

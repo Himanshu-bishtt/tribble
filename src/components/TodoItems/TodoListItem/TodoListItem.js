@@ -37,7 +37,6 @@ const TodoListItem = props => {
         category={props.category}
         text={props.text}
         onItemDelete={itemDeleteHandler}
-        showModal={props.showModal}
       />
     </li>
   );

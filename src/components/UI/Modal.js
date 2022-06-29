@@ -5,7 +5,9 @@ const Modal = props => {
     props.onCancel(prev => !prev);
   };
 
-  const deleteHandler = () => {};
+  const deleteHandler = () => {
+    props.onDelete(true);
+  };
   return (
     <div>
       <div className={styles['backdrop']} onClick={cancelHandler}></div>
