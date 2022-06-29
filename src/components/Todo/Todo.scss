@@ -1,12 +1,19 @@
 .todo {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   justify-items: center;
+  row-gap: 2rem;
   padding: 2rem 0 10rem 0;
+  margin: 0rem 3rem;
+
+  @media only screen and (max-width: 37.75em) {
+    margin: 0 1rem;
+  }
 
   @media only screen and (max-width: 30em) {
     grid-template-columns: 1fr;
     row-gap: 3rem;
     padding: 2rem 0 10rem 0;
+    margin: 0;
   }
 }
