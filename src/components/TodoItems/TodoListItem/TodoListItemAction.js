@@ -8,7 +8,6 @@ const TodoListItemAction = props => {
   const [modal, showModal] = useState(false);
 
   const deleteHandler = () => {
-    // window.confirm('Are you sure?') && props.onItemDelete(props.id);
     showModal(prev => !prev);
   };
 
