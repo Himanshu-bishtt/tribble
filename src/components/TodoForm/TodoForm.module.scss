@@ -52,6 +52,7 @@
 .todo__form--item.invalid input[type='text'],
 .todo__form--item.invalid input[type='date'] {
   outline: 2px solid red;
+  animation: shake 0.5s;
 }
 
 ///////////////////////////////////////////////////////////////
@@ -64,4 +65,27 @@
 .todo__form--cancel {
   background-color: #333;
   color: #f3f3f3;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
