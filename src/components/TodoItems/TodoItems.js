@@ -30,9 +30,9 @@ function TodoItems(props) {
               key={item.id}
               id={item.id}
               name={item.name}
-              endDate={item.finishingDate}
+              endDate={new Date(item.finishingDate)}
               category={item.category}
-              date={item.creatingDate}
+              date={new Date(item.creatingDate)}
               text={item.description}
               onTodoDelete={todoDeleteHandler}
             />
