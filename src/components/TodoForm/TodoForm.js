@@ -1,35 +1,30 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './TodoForm.module.scss';
 
 function TodoForm(props) {
-  const [nameValue, setNameValue] = useState('');
-  const [optionValue, setOptionValue] = useState('Important');
-  const [dateValue, setDateValue] = useState('');
-  const [textValue, setTextValue] = useState('');
+  const nameRef = useRef();
+  const optionRef = useRef();
+  const dateRef = useRef();
+  const textRef = useRef();
 
   const [isNameValid, setIsNameValid] = useState(true);
   const [isDateValid, setIsDateValid] = useState(true);
 
   const nameHandler = event => {
     if (event.target.value.trim().length > 0) setIsNameValid(true);
-    setNameValue(event.target.value);
-  };
-
-  const selectHandler = event => {
-    setOptionValue(event.target.value);
   };
 
   const dateHandler = event => {
     if (event.target.value.trim().length > 0) setIsDateValid(true);
-    setDateValue(event.target.value);
-  };
-
-  const infoHandler = event => {
-    setTextValue(event.target.value);
   };
 
   const submitHandler = event => {
     event.preventDefault();
+
+    const nameValue = nameRef.current.value;
+    const optionValue = optionRef.current.value;
+    const dateValue = dateRef.current.value;
+    const textValue = textRef.current.value;
 
     if (nameValue.trim().length === 0) {
       console.log('Invalid name input');
@@ -52,11 +47,6 @@ function TodoForm(props) {
     };
 
     props.onFormSubmit(todo);
-
-    setNameValue('');
-    setOptionValue('Important');
-    setDateValue('');
-    setTextValue('');
   };
 
   return (
@@ -72,13 +62,13 @@ function TodoForm(props) {
           type="text"
           id="name"
           placeholder="Enter todo name"
-          value={nameValue}
+          ref={nameRef}
         ></input>
       </div>
 
       <div className={styles['todo__form--item']}>
         <label htmlFor="category">Category*</label>
-        <select value={optionValue} onChange={selectHandler} id="category">
+        <select ref={optionRef} id="category">
           <option value="Important">Important</option>
           <option value="Entertainment">Entertainment</option>
           <option value="Sports">Sports</option>
@@ -95,20 +85,19 @@ function TodoForm(props) {
           onChange={dateHandler}
           type="date"
           id="finish-date"
-          value={dateValue}
+          ref={dateRef}
         ></input>
       </div>
 
       <div className={styles['todo__form--item']}>
         <label htmlFor="info">Additional Info (Max 200)</label>
         <textarea
-          onChange={infoHandler}
           id="info"
           placeholder="Enter addtional text for todo"
           cols="20"
           rows="5"
           maxLength="200"
-          value={textValue}
+          ref={textRef}
         ></textarea>
       </div>
 
