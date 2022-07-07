@@ -14,6 +14,9 @@ const Todo = () => {
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('items'));
+
+    if (!items) return;
+
     if (items.length !== 0) {
       setTodoItems(items);
     }
