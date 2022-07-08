@@ -1,4 +1,6 @@
 import { useReducer, useRef } from 'react';
+import Button from '../UI/Button';
+
 import styles from './TodoForm.module.scss';
 
 const nameReducer = (state, action) => {
@@ -116,16 +118,16 @@ function TodoForm(props) {
       </div>
 
       <div className={styles['todo__form--item']}>
-        <button
-          className={`btn ${styles['todo__form--cancel']}`}
+        <Button
+          className={styles['todo__form--cancel']}
           type="button"
           onClick={props.onFormCancel}
         >
           Cancel
-        </button>
-        <button className={`btn ${styles['todo__form--submit']}`} type="submit">
+        </Button>
+        <Button className={styles['todo__form--submit']} type="submit">
           Add Item
-        </button>
+        </Button>
       </div>
     </form>
   );

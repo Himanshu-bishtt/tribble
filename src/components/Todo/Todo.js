@@ -4,6 +4,7 @@ import TodoItems from '../TodoItems/TodoItems';
 
 import './Todo.scss';
 import styles from '../TodoForm/TodoForm.module.scss';
+import Button from '../UI/Button';
 
 const generateRandomNumber = () => Math.ceil(Math.random() * 100000);
 
@@ -53,12 +54,12 @@ const Todo = () => {
     <div className="container">
       <div className="todo">
         {!formShowing ? (
-          <button
-            className={`btn ${styles['todo__form--btn']}`}
+          <Button
+            className={styles['todo__form--btn']}
             onClick={showFormHandler}
           >
             Add New Todo
-          </button>
+          </Button>
         ) : (
           <TodoForm
             onFormSubmit={formSubmitHandler}

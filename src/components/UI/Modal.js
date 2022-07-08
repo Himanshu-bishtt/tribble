@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import Button from './Button';
+
 import styles from './Modal.module.scss';
 
 const Modal = props => {
@@ -20,18 +23,18 @@ const Modal = props => {
       <div className={`${styles['popup']} `}>
         <div className={styles['popup__message']}>Are you sure?</div>
         <div className={styles['popup__button']}>
-          <button
-            className={`${styles['popup__button--cancel']} btn`}
+          <Button
+            className={styles['popup__button--cancel']}
             onClick={cancelHandler}
           >
             Cancel
-          </button>
-          <button
-            className={`${styles['popup__button--ok']} btn`}
+          </Button>
+          <Button
+            className={styles['popup__button--ok']}
             onClick={deleteHandler}
           >
             Delete Item
-          </button>
+          </Button>
         </div>
       </div>
     );
