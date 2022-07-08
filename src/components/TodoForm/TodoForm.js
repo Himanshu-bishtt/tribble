@@ -1,42 +1,56 @@
-import { useRef, useState } from 'react';
+import { useReducer, useRef } from 'react';
 import styles from './TodoForm.module.scss';
 
+const nameReducer = (state, action) => {
+  if (action.type === 'USER_INPUT') {
+    return { value: action.value, isValid: action.value.trim().length > 0 };
+  }
+  return { value: '', isValid: false };
+};
+
+const dateReducer = (state, action) => {
+  if (action.type === 'USER_INPUT') {
+    return { value: action.value, isValid: action.value.trim().length > 0 };
+  }
+  return { value: '', isValid: false };
+};
+
 function TodoForm(props) {
-  const nameRef = useRef();
   const optionRef = useRef();
-  const dateRef = useRef();
   const textRef = useRef();
 
-  const [isNameValid, setIsNameValid] = useState(true);
-  const [isDateValid, setIsDateValid] = useState(true);
+  // using reducer to mangage complex state of name and date
+  const [nameInput, nameDispatcher] = useReducer(nameReducer, {
+    value: '',
+    isValid: null,
+  });
+
+  const [dateInput, dateDispatcher] = useReducer(dateReducer, {
+    value: '',
+    isValid: null,
+  });
+
+  ///////////////////////////////////////////////////////////
 
   const nameHandler = event => {
-    if (event.target.value.trim().length > 0) setIsNameValid(true);
+    nameDispatcher({ type: 'USER_INPUT', value: event.target.value });
   };
 
   const dateHandler = event => {
-    if (event.target.value.trim().length > 0) setIsDateValid(true);
+    dateDispatcher({ type: 'USER_INPUT', value: event.target.value });
   };
 
   const submitHandler = event => {
     event.preventDefault();
 
-    const nameValue = nameRef.current.value;
+    const nameValue = nameInput.value;
     const optionValue = optionRef.current.value;
-    const dateValue = dateRef.current.value;
+    const dateValue = dateInput.value;
     const textValue = textRef.current.value;
 
-    if (nameValue.trim().length === 0) {
-      console.log('Invalid name input');
-      setIsNameValid(false);
-      return;
-    }
+    if (!nameInput.isValid) return;
 
-    if (dateValue.trim().length === 0) {
-      console.log('Invalid date input');
-      setIsDateValid(false);
-      return;
-    }
+    if (!dateInput.isValid) return;
 
     const todo = {
       name: nameValue,
@@ -53,7 +67,7 @@ function TodoForm(props) {
     <form className={styles['todo__form']} onSubmit={submitHandler}>
       <div
         className={`${styles['todo__form--item']} ${
-          isNameValid ? '' : styles['invalid']
+          nameInput.isValid ? '' : styles['invalid']
         }`}
       >
         <label htmlFor="name">Name*</label>
@@ -62,7 +76,7 @@ function TodoForm(props) {
           type="text"
           id="name"
           placeholder="Enter todo name"
-          ref={nameRef}
+          value={nameInput.value}
         ></input>
       </div>
 
@@ -77,7 +91,7 @@ function TodoForm(props) {
 
       <div
         className={`${styles['todo__form--item']} ${
-          isDateValid ? '' : styles['invalid']
+          dateInput.isValid ? '' : styles['invalid']
         }`}
       >
         <label htmlFor="finish-date">Expected Finishing Date*</label>
@@ -85,7 +99,7 @@ function TodoForm(props) {
           onChange={dateHandler}
           type="date"
           id="finish-date"
-          ref={dateRef}
+          value={dateInput.value}
         ></input>
       </div>
 
