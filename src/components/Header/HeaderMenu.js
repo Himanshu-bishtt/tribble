@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Backdrop from '../UI/Backdrop';
 
 import styles from './HeaderMenu.module.scss';
 
 const HeaderMenu = () => {
+  const [menu, setMenu] = useState(false);
+
   const menuHandler = event => {
-    console.log(event.target.checked);
+    setMenu(event.target.checked);
+  };
+
+  const backdropHandler = () => {
+    setMenu(prev => !prev);
   };
 
   return (
-    <div className={styles['header__menu']}>
+    <div className={`${styles['header__menu']} ${styles[menu ? 'show' : '']}`}>
+      {menu ? <Backdrop onClick={backdropHandler} /> : null}
       <input
         className={styles['header__menu--checkbox']}
         onChange={menuHandler}

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Backdrop from './Backdrop';
 import Button from './Button';
 
 import styles from './Modal.module.scss';
@@ -12,10 +13,6 @@ const Modal = props => {
 
   const deleteHandler = () => {
     props.onDelete(true);
-  };
-
-  const Backdrop = () => {
-    return <div className={styles['backdrop']} onClick={cancelHandler}></div>;
   };
 
   const Overlay = () => {
@@ -42,7 +39,7 @@ const Modal = props => {
 
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(<Backdrop />, document.getElementById('backdrop'))}
+      <Backdrop onClick={cancelHandler} />
       {ReactDOM.createPortal(<Overlay />, document.getElementById('overlay'))}
     </React.Fragment>
   );

@@ -4,6 +4,9 @@
   --color-dark: #101010;
   --color-white: #f3f3f3;
 
+  --color-grey-1: #333;
+  --color-grey-2: rgb(170, 170, 170);
+
   --color-important: red;
   --color-sports: var(--color-1);
   --color-entertainment: green;
