@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Backdrop from '../UI/Backdrop';
+import Backdrop from '../../UI/Backdrop';
 
 import styles from './HeaderMenu.module.scss';
 
@@ -12,6 +12,14 @@ const HeaderMenu = () => {
 
   const backdropHandler = () => {
     setMenu(prev => !prev);
+  };
+
+  const listItemHandler = event => {
+    const item = event.target;
+    if (!item.dataset.listItemId) return;
+
+    setMenu(prev => !prev);
+    console.log(item.textContent);
   };
 
   return (
@@ -29,10 +37,28 @@ const HeaderMenu = () => {
         <span className={styles['header__menu--icon']}></span>
       </label>
       <div className={styles['header__menu--box']}>
-        <ul className={styles['header__menu--box-list']}>
-          <li className={styles['header__menu--box-item']}>Todo App</li>
-          <li className={styles['header__menu--box-item']}>Expense Tracker</li>
-          <li className={styles['header__menu--box-item']}>Calculator</li>
+        <ul
+          className={styles['header__menu--box-list']}
+          onClick={listItemHandler}
+        >
+          <li
+            className={styles['header__menu--box-item']}
+            data-list-item-id="1"
+          >
+            Todo App
+          </li>
+          <li
+            className={styles['header__menu--box-item']}
+            data-list-item-id="2"
+          >
+            Expense Tracker
+          </li>
+          <li
+            className={styles['header__menu--box-item']}
+            data-list-item-id="3"
+          >
+            Calculator
+          </li>
         </ul>
       </div>
     </div>

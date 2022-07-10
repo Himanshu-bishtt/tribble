@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Modal from '../../UI/Modal';
+import Modal from '../../../UI/Modal';
 
-import icons from '../../../static/icons/icons.svg';
+import icons from '../../../../static/icons/icons.svg';
 import styles from './TodoListItemAction.module.scss';
 
 const TodoListItemAction = props => {

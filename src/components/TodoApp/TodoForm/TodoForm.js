@@ -1,5 +1,5 @@
 import { useReducer, useRef } from 'react';
-import Button from '../UI/Button';
+import Button from '../../UI/Button';
 
 import styles from './TodoForm.module.scss';
 
