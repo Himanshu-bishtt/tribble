@@ -20,7 +20,7 @@ const HeaderMenu = props => {
 
     setMenu(prev => !prev);
 
-    props.menuItemHandler(item.dataset.listItemId);
+    props.menuItemHandler(+item.dataset.listItemId);
   };
 
   return (
