@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import ExpenseMenu from '../ExpenseMenu/ExpenseMenu';
-import ExpenseOverview from '../Overview/ExpenseOverview';
-import AddExpense from '../Add/AddExpense';
+import ExpenseOverview from '../ExpenseOverview/ExpenseOverview';
+import ExpenseAdd from '../ExpenseAdd/ExpenseAdd';
 
 const Expense = () => {
   const [content, setContent] = useState(1);
@@ -14,7 +14,7 @@ const Expense = () => {
   return (
     <React.Fragment>
       <ExpenseMenu menuButtonHandler={menuButtonHandler} />
-      {content === 1 ? <ExpenseOverview /> : <AddExpense />}
+      {content === 1 ? <ExpenseOverview /> : <ExpenseAdd />}
     </React.Fragment>
   );
 };
