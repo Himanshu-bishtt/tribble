@@ -4,13 +4,13 @@ import styles from './ExpenseMenu.module.scss';
 import icons from '../../../static/icons/icons.svg';
 import Button from '../../UI/Button';
 
-const ExpenseMenu = () => {
+const ExpenseMenu = props => {
   const expenseMenuHandler = event => {
     const item = event.target.closest('button');
 
     if (!item) return;
 
-    console.log(+item.dataset.id);
+    props.menuButtonHandler(+item.dataset.id);
   };
   return (
     <div className={styles['expense__menu']} onClick={expenseMenuHandler}>
