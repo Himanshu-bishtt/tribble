@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import Header from '../TodoApp/Header/Header';
 import Todo from '../TodoApp/Todo/Todo';
-import Expense from '../ExpenseTracker/Expense';
+import Expense from '../ExpenseTracker/Expense/Expense';
 
 const Main = () => {
   const [app, setApp] = useState(1);
