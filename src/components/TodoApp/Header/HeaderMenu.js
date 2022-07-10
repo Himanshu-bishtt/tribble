@@ -3,7 +3,7 @@ import Backdrop from '../../UI/Backdrop';
 
 import styles from './HeaderMenu.module.scss';
 
-const HeaderMenu = () => {
+const HeaderMenu = props => {
   const [menu, setMenu] = useState(false);
 
   const menuHandler = event => {
@@ -19,7 +19,8 @@ const HeaderMenu = () => {
     if (!item.dataset.listItemId) return;
 
     setMenu(prev => !prev);
-    console.log(item.textContent);
+
+    props.menuItemHandler(item.dataset.listItemId);
   };
 
   return (
