@@ -13,8 +13,10 @@ const Expense = () => {
 
   return (
     <React.Fragment>
-      <ExpenseMenu menuButtonHandler={menuButtonHandler} />
-      {content === 1 ? <ExpenseOverview /> : <ExpenseAdd />}
+      <div className="container">
+        <ExpenseMenu menuButtonHandler={menuButtonHandler} />
+        {content === 1 ? <ExpenseOverview /> : <ExpenseAdd />}
+      </div>
     </React.Fragment>
   );
 };
