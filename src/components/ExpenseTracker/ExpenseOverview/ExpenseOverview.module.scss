@@ -3,4 +3,54 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.expense__overview--card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 5rem;
+  background-color: var(--color-grey-1);
+  color: var(--color-white);
+  position: relative;
+}
+
+.expense__overview--name {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-grey-2);
+}
+
+.expense__overview--amount {
+  font-size: 2rem;
+  font-weight: bold;
+
+  &-income {
+    color: rgb(2, 122, 2);
+  }
+
+  &-expense {
+    color: rgb(129, 0, 0);
+  }
+}
+
+.expense__overview--icon {
+  height: 1.7rem;
+  width: 1.7rem;
+  position: absolute;
+  right: 4%;
+  top: 7%;
+  background-color: var(--color-white);
+  border-radius: 50%;
+
+  &-income {
+    fill: rgb(2, 122, 2);
+  }
+
+  &-expense {
+    fill: rgb(129, 0, 0);
+  }
 }
