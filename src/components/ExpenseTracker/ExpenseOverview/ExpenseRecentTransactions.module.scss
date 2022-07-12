@@ -1,0 +1,71 @@
+.expense__transactions--heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 3rem 0rem;
+  text-align: center;
+  color: var(--color-1);
+}
+.expense__transactions {
+  align-self: center;
+  height: 20rem;
+  width: max-content;
+  overflow-y: scroll;
+  padding: 0rem 1rem;
+}
+
+.expense__transactions::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--color-white);
+}
+
+.expense__transactions::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+.expense__transactions::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+.expense__transactions::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.transaction__item {
+  background-color: var(--color-white);
+  padding: 1rem 2.4rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  column-gap: 4rem;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.transaction__item--icon {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--color-white-1);
+  padding: 1.5rem;
+  // border-radius: 50%;
+}
+
+.transaction__item--details {
+  margin-left: -3rem;
+}
+
+.transaction__item--name {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.transaction__item--date {
+  color: var(--color-grey-1);
+}
+
+.transaction__item--amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

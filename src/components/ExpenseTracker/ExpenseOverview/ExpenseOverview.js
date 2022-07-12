@@ -6,10 +6,10 @@ import ExpenseSummary from './ExpenseSummary';
 
 const ExpenseOverview = () => {
   return (
-    <React.Fragment>
+    <div className={styles['expense__overview']}>
       <ExpenseSummary />
-      {/* <ExpenseRecentTransactions /> */}
-    </React.Fragment>
+      <ExpenseRecentTransactions />
+    </div>
   );
 };
 
