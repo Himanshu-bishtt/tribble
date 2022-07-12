@@ -4,11 +4,11 @@ import styles from './ExpenseOverview.module.scss';
 import ExpenseRecentTransactions from './ExpenseRecentTransactions';
 import ExpenseSummary from './ExpenseSummary';
 
-const ExpenseOverview = () => {
+const ExpenseOverview = props => {
   return (
     <div className={styles['expense__overview']}>
       <ExpenseSummary />
-      <ExpenseRecentTransactions />
+      <ExpenseRecentTransactions transactions={props.transactions} />
     </div>
   );
 };
