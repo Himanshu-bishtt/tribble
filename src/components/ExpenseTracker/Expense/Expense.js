@@ -6,7 +6,7 @@ import ExpenseAdd from '../ExpenseAdd/ExpenseAdd';
 
 const Expense = () => {
   const [content, setContent] = useState(1);
-  const [transactions, setTransactions] = useState([
+  const transactions = [
     {
       id: 1,
       name: 'School Fees',
@@ -43,7 +43,8 @@ const Expense = () => {
       time: '1:10 PM',
       amount: 12_000,
     },
-  ]);
+  ];
+  // const [transactions, setTransactions] = useState();
 
   const menuButtonHandler = itemId => {
     setContent(itemId);

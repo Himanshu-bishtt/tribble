@@ -9,6 +9,11 @@
   color: var(--color-dark);
   margin-bottom: 1rem;
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.5);
+
+  @media only screen and (max-width: 30em) {
+    column-gap: 0.5rem;
+    padding: 1rem;
+  }
 }
 
 .transaction__item--icon {
@@ -21,6 +26,10 @@
 
 .transaction__item--details {
   margin-left: -2rem;
+
+  @media only screen and (max-width: 30em) {
+    margin: 0;
+  }
 }
 
 .transaction__item--name {
@@ -38,6 +47,10 @@
   border-radius: 10px;
   padding: 0.5rem;
   text-transform: uppercase;
+
+  @media only screen and (max-width: 30em) {
+    font-size: 0.6rem;
+  }
 }
 
 .transaction__item--amount {
