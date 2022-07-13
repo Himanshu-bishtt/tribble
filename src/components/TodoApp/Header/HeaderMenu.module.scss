@@ -14,6 +14,10 @@
   height: 2rem;
   width: 2rem;
   z-index: 100;
+
+  @media only screen and (max-width: 30em) {
+    top: 4.3%;
+  }
 }
 
 .header__menu--button span {

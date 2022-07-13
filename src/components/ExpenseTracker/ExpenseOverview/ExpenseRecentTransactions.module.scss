@@ -16,6 +16,10 @@
   width: max-content;
   overflow-y: scroll;
   padding: 0rem 1rem;
+
+  @media only screen and (max-width: 30em) {
+    margin-bottom: 7rem;
+  }
 }
 
 .expense__transactions::-webkit-scrollbar {
