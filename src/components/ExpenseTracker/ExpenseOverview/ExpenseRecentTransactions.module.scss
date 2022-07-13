@@ -6,7 +6,7 @@
   color: var(--color-1);
 
   @media only screen and (max-width: 30em) {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin: 4rem 0 2rem 0;
   }
 }
@@ -19,12 +19,17 @@
 
   @media only screen and (max-width: 30em) {
     margin-bottom: 7rem;
+    padding: 0 0.7rem;
   }
 }
 
 .expense__transactions::-webkit-scrollbar {
   width: 10px;
   background-color: var(--color-white);
+
+  @media only screen and (max-width: 30em) {
+    width: 5px;
+  }
 }
 
 .expense__transactions::-webkit-scrollbar-track {
