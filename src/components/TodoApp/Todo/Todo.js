@@ -1,73 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import TodoForm from '../TodoForm/TodoForm';
 import TodoItems from '../TodoItems/TodoItems';
 
 import './Todo.scss';
 import styles from '../TodoForm/TodoForm.module.scss';
 import Button from '../../UI/Button';
-
-const generateRandomNumber = () => Math.ceil(Math.random() * 100000);
+import TodoContext from '../../../store/TodoContext';
 
 const Todo = () => {
-  const [todoItems, setTodoItems] = useState([]);
-
-  const [formShowing, setFormShowing] = useState(false);
-
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('items'));
-
-    if (!items) return;
-
-    if (items.length !== 0) {
-      setTodoItems(items);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(todoItems));
-  }, [todoItems]);
-
-  const formSubmitHandler = todo => {
-    const item = {
-      id: 'ID' + generateRandomNumber(),
-      ...todo,
-    };
-
-    setTodoItems(prevTodos => [item, ...prevTodos]);
-
-    setFormShowing(false);
-  };
-
-  const todoItemDeleteHandler = id => {
-    setTodoItems(prevTodos => [...prevTodos.filter(item => item.id !== id)]);
-  };
-
-  const showFormHandler = () => {
-    setFormShowing(true);
-  };
-
-  const hideFormHandler = () => {
-    setFormShowing(false);
-  };
+  const todoCtx = useContext(TodoContext);
 
   return (
     <div className="container">
       <div className="todo">
-        {!formShowing ? (
+        {!todoCtx.formShowing ? (
           <Button
             className={styles['todo__form--btn']}
-            onClick={showFormHandler}
+            onClick={todoCtx.showFormHandler}
           >
             Add New Todo
           </Button>
         ) : (
           <TodoForm
-            onFormSubmit={formSubmitHandler}
-            onFormCancel={hideFormHandler}
+            onFormSubmit={todoCtx.formSubmitHandler}
+            onFormCancel={todoCtx.hideFormHandler}
           />
         )}
 
-        <TodoItems todos={todoItems} onTodoItemDelete={todoItemDeleteHandler} />
+        <TodoItems
+          todos={todoCtx.todoItems}
+          onTodoItemDelete={todoCtx.todoItemDeleteHandler}
+        />
       </div>
     </div>
   );
