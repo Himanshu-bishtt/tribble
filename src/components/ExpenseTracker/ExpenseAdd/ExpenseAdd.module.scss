@@ -1,0 +1,41 @@
+.expense__form {
+  // background-color: red;
+  margin: 0 auto;
+  width: 40%;
+  margin-bottom: 8rem;
+
+  @media only screen and (max-width: 30em) {
+    width: 80%;
+  }
+}
+
+.expense__form--item {
+  margin: 1.5rem 0;
+
+  label {
+    font-size: 1rem;
+  }
+  input,
+  select {
+    background: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-dark);
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    padding: 1rem 0.7rem;
+    transition: background-color 0.5s;
+    width: -webkit-fill-available;
+
+    &:focus {
+      outline: 2px solid var(--color-1);
+    }
+  }
+}
+
+.expense__form--submit {
+  background-color: var(--color-1);
+  width: -webkit-fill-available;
+  margin-top: 1rem;
+}
