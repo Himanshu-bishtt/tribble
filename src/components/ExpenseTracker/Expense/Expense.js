@@ -1,64 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
+import ExpenseContext from '../../../store/ExpenseContext';
 import ExpenseMenu from '../ExpenseMenu/ExpenseMenu';
 import ExpenseOverview from '../ExpenseOverview/ExpenseOverview';
 import ExpenseAdd from '../ExpenseAdd/ExpenseAdd';
 
 const Expense = () => {
-  const [content, setContent] = useState(1);
-  const transactions = [
-    {
-      id: 1,
-      name: 'School Fees',
-      category: 'Education',
-      type: 'Expense',
-      date: '12 July 2022',
-      time: '2:10 PM',
-      amount: 12,
-    },
-    {
-      id: 2,
-      name: 'Salary',
-      category: 'Salary',
-      type: 'Income',
-      date: '07 July 2022',
-      time: '1:10 PM',
-      amount: 12_000,
-    },
-    {
-      id: 3,
-      name: 'Dividend Credit',
-      category: 'Shares',
-      type: 'Income',
-      date: '12 July 2022',
-      time: '2:10 PM',
-      amount: 230,
-    },
-    {
-      id: 4,
-      name: 'Salary',
-      category: 'Salary',
-      type: 'Income',
-      date: '07 July 2022',
-      time: '1:10 PM',
-      amount: 12_000,
-    },
-  ];
-  // const [transactions, setTransactions] = useState();
+  const expenseCtx = useContext(ExpenseContext);
 
-  const menuButtonHandler = itemId => {
-    setContent(itemId);
-  };
+  let content = '';
+
+  if (expenseCtx.expenseContent === 1)
+    content = <ExpenseOverview transactions={expenseCtx.transactions} />;
+  if (expenseCtx.expenseContent === 2) content = <ExpenseAdd />;
+  if (expenseCtx.expenseContent === 3) console.log('Profile');
 
   return (
     <React.Fragment>
       <div className="container">
-        <ExpenseMenu menuButtonHandler={menuButtonHandler} />
-        {content === 1 ? (
-          <ExpenseOverview transactions={transactions} />
-        ) : (
-          <ExpenseAdd />
-        )}
+        <ExpenseMenu menuButtonHandler={expenseCtx.menuButtonHandler} />
+        {content}
       </div>
     </React.Fragment>
   );

@@ -4,7 +4,6 @@ import ExpenseTransactionItem from './ExpenseTransactionItem';
 import styles from './ExpenseRecentTransactions.module.scss';
 
 const ExpenseRecentTransactions = props => {
-  console.log(props);
   return (
     <React.Fragment>
       <div className={styles['expense__transactions--heading']}>

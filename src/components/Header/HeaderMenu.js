@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Backdrop from '../../UI/Backdrop';
+import Backdrop from '../UI/Backdrop';
 
 import styles from './HeaderMenu.module.scss';
 
