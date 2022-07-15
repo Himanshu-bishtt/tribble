@@ -20,6 +20,10 @@
 .todo__form--item label {
   font-size: 1rem;
   transition: color 0.5s;
+
+  @media only screen and (max-width: 30em) {
+    font-size: 0.8rem;
+  }
 }
 
 .todo__form--item input,
@@ -38,6 +42,11 @@
 
   &:focus {
     outline: 2px solid var(--color-1);
+  }
+
+  @media only screen and (max-width: 30em) {
+    padding: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -60,11 +69,13 @@
 .todo__form--submit {
   background: var(--color-1);
   margin-left: 1rem;
+  font-size: 0.8rem;
 }
 
 .todo__form--cancel {
   background-color: #333;
   color: #f3f3f3;
+  font-size: 0.8rem;
 }
 
 @keyframes shake {
