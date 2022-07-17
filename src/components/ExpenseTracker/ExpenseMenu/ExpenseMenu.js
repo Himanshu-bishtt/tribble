@@ -2,7 +2,8 @@ import React from 'react';
 
 import styles from './ExpenseMenu.module.scss';
 import icons from '../../../static/icons/icons.svg';
-import Button from '../../UI/Button';
+
+import Button from '../../UI/Button/Button';
 
 const ExpenseMenu = props => {
   const expenseMenuHandler = event => {

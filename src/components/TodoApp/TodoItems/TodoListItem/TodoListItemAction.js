@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from '../../../UI/Modal';
+import Modal from '../../../UI/Modal/Modal';
 
 import icons from '../../../../static/icons/icons.svg';
 import styles from './TodoListItemAction.module.scss';

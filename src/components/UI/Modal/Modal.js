@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Backdrop from './Backdrop';
-import Button from './Button';
+import Backdrop from '../Backdrop/Backdrop';
+import Button from '../Button/Button';
 
 import styles from './Modal.module.scss';
 

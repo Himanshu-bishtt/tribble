@@ -4,7 +4,7 @@ import TodoItems from '../TodoItems/TodoItems';
 
 import './Todo.scss';
 import styles from '../TodoForm/TodoForm.module.scss';
-import Button from '../../UI/Button';
+import Button from '../../UI/Button/Button';
 import TodoContext from '../../../store/TodoContext';
 
 const Todo = () => {
