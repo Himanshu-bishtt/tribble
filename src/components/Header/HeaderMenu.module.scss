@@ -51,7 +51,7 @@
 .header__menu--checkbox {
   opacity: 0;
   // this makes the jumping stop, when we click the menu button
-  display: none;
+  // display: none;
 }
 
 .header__menu.show .header__menu--checkbox:checked ~ .header__menu--box {

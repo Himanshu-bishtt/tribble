@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Backdrop from '../UI/Backdrop/Backdrop';
 
 import styles from './HeaderMenu.module.scss';
 
 const HeaderMenu = props => {
   const [menu, setMenu] = useState(false);
+  const checkboxRef = useRef();
 
   const menuHandler = event => {
     setMenu(event.target.checked);
   };
 
   const backdropHandler = () => {
+    checkboxRef.current.checked = false;
     setMenu(prev => !prev);
   };
 
@@ -18,15 +20,17 @@ const HeaderMenu = props => {
     const item = event.target;
     if (!item.dataset.listItemId) return;
 
+    checkboxRef.current.checked = false;
     setMenu(prev => !prev);
 
     props.menuItemHandler(+item.dataset.listItemId);
   };
 
   return (
-    <div className={`${styles['header__menu']} ${styles[menu ? 'show' : '']}`}>
+    <div className={`${styles['header__menu']} ${menu ? styles['show'] : ''}`}>
       {menu ? <Backdrop onClick={backdropHandler} /> : null}
       <input
+        ref={checkboxRef}
         className={styles['header__menu--checkbox']}
         onChange={menuHandler}
         type="checkbox"
