@@ -1,5 +1,6 @@
-import { useReducer, useRef } from 'react';
+import { useContext, useReducer, useRef } from 'react';
 import Button from '../../UI/Button/Button';
+import TodoContext from '../../../store/TodoContext';
 
 import styles from './TodoForm.module.scss';
 
@@ -20,6 +21,8 @@ const dateReducer = (state, action) => {
 function TodoForm(props) {
   const optionRef = useRef();
   const textRef = useRef();
+
+  const todoCtx = useContext(TodoContext);
 
   // using reducer to mangage complex state of name and date
   const [nameInput, nameDispatcher] = useReducer(nameReducer, {
@@ -61,6 +64,8 @@ function TodoForm(props) {
       creatingDate: new Date(),
       description: textValue,
     };
+
+    todoCtx.showToast('Item successfully added', 'success');
 
     props.onFormSubmit(todo);
   };

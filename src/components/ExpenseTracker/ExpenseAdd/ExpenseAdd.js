@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { TOAST_TIMER } from '../../../config/config';
 
 import Button from '../../UI/Button/Button';
 import Toast from '../../UI/Toast/Toast';
@@ -25,7 +26,7 @@ function ExpenseAdd() {
         message: '',
         type: '',
       });
-    }, 2500);
+    }, TOAST_TIMER);
 
     return () => {
       clearTimeout(timer);

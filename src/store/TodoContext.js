@@ -3,15 +3,27 @@ import React, { useEffect, useState } from 'react';
 const TodoContext = React.createContext({
   todoItems: [],
   formShowing: false,
+  toast: {
+    flag: false,
+    message: '',
+    type: '',
+  },
   formSubmitHandler: todo => {},
   todoItemDeleteHandler: id => {},
   showFormHandler: () => {},
   hideFormHandler: () => {},
+  showToast: () => {},
+  hideToast: () => {},
 });
 
 export const TodoContextProvider = props => {
   const [todoItems, setTodoItems] = useState([]);
   const [formShowing, setFormShowing] = useState(false);
+  const [toast, setToast] = useState({
+    flag: false,
+    message: '',
+    type: '',
+  });
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('items'));
@@ -50,6 +62,22 @@ export const TodoContextProvider = props => {
     setFormShowing(false);
   };
 
+  const showToast = (message, type) => {
+    setToast({
+      flag: true,
+      message,
+      type,
+    });
+  };
+
+  const hideToast = () => {
+    setToast({
+      flag: false,
+      message: '',
+      type: '',
+    });
+  };
+
   return (
     <TodoContext.Provider
       value={{
@@ -59,6 +87,9 @@ export const TodoContextProvider = props => {
         todoItemDeleteHandler,
         showFormHandler,
         hideFormHandler,
+        toast,
+        showToast,
+        hideToast,
       }}
     >
       {props.children}

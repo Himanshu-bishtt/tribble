@@ -9,6 +9,7 @@
   border-radius: 5px;
   opacity: 0;
   transition: all 0.5s;
+  z-index: 9;
 
   @media only screen and (max-width: 30em) {
     font-size: 0.7rem;

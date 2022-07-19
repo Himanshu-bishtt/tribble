@@ -11,7 +11,7 @@ const Toast = props => {
           props.type === 'success' ? styles['success'] : styles['error']
         }`}
       >
-        {props.message} ⚠️
+        {props.message}
       </div>
     );
   };
