@@ -44,3 +44,7 @@
 .expense__transactions::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.expense__transactions--empty {
+  font-size: 1.2rem;
+}

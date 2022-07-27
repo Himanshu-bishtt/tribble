@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { generateRandomNumber } from '../config/config';
 
 const TodoContext = React.createContext({
   todoItems: [],
@@ -96,7 +97,5 @@ export const TodoContextProvider = props => {
     </TodoContext.Provider>
   );
 };
-
-const generateRandomNumber = () => Math.ceil(Math.random() * 100000);
 
 export default TodoContext;

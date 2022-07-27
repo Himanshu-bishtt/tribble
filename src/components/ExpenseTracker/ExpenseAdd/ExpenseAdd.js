@@ -6,7 +6,7 @@ import Toast from '../../UI/Toast/Toast';
 
 import styles from './ExpenseAdd.module.scss';
 
-function ExpenseAdd() {
+const ExpenseAdd = props => {
   const [toast, setToast] = useState({
     flag: false,
     message: '',
@@ -98,9 +98,10 @@ function ExpenseAdd() {
       category: categoryState,
       type: typeState,
       date: dateState,
+      time: `${new Date().getHours()}: ${new Date().getMinutes()}: ${new Date().getSeconds()}`,
     };
 
-    console.log(expenseData);
+    props.addExpenseHandler(expenseData);
 
     setToast({
       flag: true,
@@ -178,6 +179,6 @@ function ExpenseAdd() {
       </form>
     </React.Fragment>
   );
-}
+};
 
 export default ExpenseAdd;
