@@ -7,7 +7,7 @@ import ExpenseSummary from './ExpenseSummary';
 const ExpenseOverview = props => {
   return (
     <div className={styles['expense__overview']}>
-      <ExpenseSummary />
+      <ExpenseSummary transactions={props.transactions} />
       <ExpenseRecentTransactions transactions={props.transactions} />
     </div>
   );
