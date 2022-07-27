@@ -27,7 +27,7 @@ export const TodoContextProvider = props => {
   });
 
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('items'));
+    const items = JSON.parse(localStorage.getItem('todo-items'));
 
     if (!items) return;
 
@@ -37,7 +37,7 @@ export const TodoContextProvider = props => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('items', JSON.stringify(todoItems));
+    localStorage.setItem('todo-items', JSON.stringify(todoItems));
   }, [todoItems]);
 
   const formSubmitHandler = todo => {

@@ -98,7 +98,7 @@ const ExpenseAdd = props => {
       category: categoryState,
       type: typeState,
       date: dateState,
-      time: `${new Date().getHours()}: ${new Date().getMinutes()}: ${new Date().getSeconds()}`,
+      time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`,
     };
 
     props.addExpenseHandler(expenseData);
