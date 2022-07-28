@@ -1,14 +1,18 @@
 .transaction__item {
-  background-color: var(--color-white);
+  position: relative;
+  background-color: var(--color-grey-1);
+  color: var(--color-white);
   padding: 1rem 2rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   column-gap: 3rem;
-  color: var(--color-dark);
-  margin-bottom: 1rem;
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.5);
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 
   @media only screen and (max-width: 30em) {
     column-gap: 1rem;
@@ -17,6 +21,7 @@
 }
 
 .transaction__item--icon {
+  display: none;
   height: 3rem;
   width: 1.5rem;
   background-color: var(--color-white-1);
@@ -31,8 +36,6 @@
 }
 
 .transaction__item--details {
-  margin-left: -2rem;
-
   @media only screen and (max-width: 30em) {
     margin: 0;
   }
@@ -43,16 +46,20 @@
 }
 
 .transaction__item--date {
-  color: var(--color-grey-1);
   font-size: 0.7rem;
 }
 
 .transaction__item--category {
-  font-size: 0.8rem;
-  background-color: var(--color-white-1);
+  font-size: 0.6rem;
   border-radius: 10px;
   padding: 0.5rem;
+  border-radius: 10px;
   text-transform: uppercase;
+  background-color: #e2d733;
+  position: absolute;
+  top: -25%;
+  left: -4%;
+  color: var(--color-dark);
 
   @media only screen and (max-width: 30em) {
     font-size: 0.6rem;
