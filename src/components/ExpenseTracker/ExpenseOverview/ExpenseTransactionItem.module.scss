@@ -1,7 +1,7 @@
 .transaction__item {
   position: relative;
-  background-color: var(--color-grey-1);
-  color: var(--color-white);
+  background-color: var(--color-white-1);
+  color: var(--color-dark);
   padding: 1rem 2rem;
   border-radius: 5px;
   display: flex;
@@ -22,10 +22,8 @@
 
 .transaction__item--icon {
   display: none;
-  height: 3rem;
+  height: 2rem;
   width: 1.5rem;
-  background-color: var(--color-white-1);
-  padding: 0.2rem 1rem;
   border-radius: 50%;
 
   @media only screen and (max-width: 30em) {
@@ -53,7 +51,7 @@
   font-size: 0.6rem;
   border-radius: 10px;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 20px;
   text-transform: uppercase;
   background-color: #e2d733;
   position: absolute;

@@ -1,5 +1,5 @@
 .todo__items {
-  justify-self: stretch;
+  // justify-self: stretch;
 
   @media only screen and (max-width: 30em) {
     justify-self: auto;
@@ -10,9 +10,10 @@
 .todo__items--heading {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  text-align: center;
 
   @media only screen and (max-width: 30em) {
-    text-align: center;
+    margin-top: 1.5rem;
     font-size: 1.7rem;
   }
 }
