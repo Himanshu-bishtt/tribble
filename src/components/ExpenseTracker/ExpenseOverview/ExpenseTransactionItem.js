@@ -5,7 +5,11 @@ import styles from './ExpenseTransactionItem.module.scss';
 
 const ExpenseTransactionItem = props => {
   return (
-    <div className={styles['transaction__item']}>
+    <div
+      className={`${styles['transaction__item']} ${
+        props.type === 'Income' ? styles['income'] : styles['expense']
+      }`}
+    >
       <svg className={styles['transaction__item--icon']}>
         <use href={`${icons}#icon-truck`}></use>
       </svg>
@@ -18,12 +22,7 @@ const ExpenseTransactionItem = props => {
       <h3 className={styles['transaction__item--category']}>
         {props.category}
       </h3>
-      <div
-        style={props.type === 'Expense' ? { color: 'red' } : { color: 'green' }}
-        className={styles['transaction__item--amount']}
-      >
-        ${props.amount}
-      </div>
+      <div className={styles['transaction__item--amount']}>${props.amount}</div>
     </div>
   );
 };
