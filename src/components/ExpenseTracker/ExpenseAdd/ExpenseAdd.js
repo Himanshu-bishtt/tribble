@@ -105,7 +105,7 @@ const ExpenseAdd = props => {
 
     setToast({
       flag: true,
-      message: 'Form added successfully',
+      message: 'Expense added successfully',
       type: 'success',
     });
 
