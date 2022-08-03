@@ -7,23 +7,27 @@ const ExpenseRecentTransactions = props => {
   return (
     <React.Fragment>
       <div className={styles['expense__transactions--heading']}>
-        Recent Transactions
+        5 Recent Transactions
       </div>
       <div className={styles['expense__transactions']}>
         {props.transactions.length === 0 ? (
           <p className={styles['expense__transactions--empty']}>No items</p>
         ) : (
-          props.transactions.map((transaction, index) => (
-            <ExpenseTransactionItem
-              key={transaction.id}
-              name={transaction.name}
-              category={transaction.category}
-              type={transaction.type}
-              date={transaction.date}
-              time={transaction.time}
-              amount={transaction.amount}
-            />
-          ))
+          props.transactions.map((transaction, index) => {
+            if (index <= 4) {
+              return (
+                <ExpenseTransactionItem
+                  key={transaction.id}
+                  name={transaction.name}
+                  category={transaction.category}
+                  type={transaction.type}
+                  date={transaction.date}
+                  time={transaction.time}
+                  amount={transaction.amount}
+                />
+              );
+            } else return null;
+          })
         )}
       </div>
     </React.Fragment>

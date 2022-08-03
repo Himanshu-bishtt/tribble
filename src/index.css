@@ -2,6 +2,7 @@
   --color-1: #03dbdb;
 
   --color-dark: #101010;
+  --color-dark-1: #1d2029;
   --color-white: #f3f3f3;
   --color-white-1: #e7e7e7;
 
@@ -59,4 +60,8 @@ button {
 
 button:hover {
   opacity: 0.9;
+}
+
+svg {
+  pointer-events: none;
 }

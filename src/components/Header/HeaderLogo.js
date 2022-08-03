@@ -11,7 +11,7 @@ const HeaderLogo = () => {
         src={logo}
         alt="tribble logo"
       ></img>
-      <h1 className={styles['header__logo--text']}>Tribble Todo App</h1>
+      <h1 className={styles['header__logo--text']}>Tribble App</h1>
     </div>
   );
 };
