@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { TOAST_TIMER } from '../../../config/config';
 
 import Button from '../../UI/Button/Button';
+import Input from '../../UI/Input/Input';
 import Toast from '../../UI/Toast/Toast';
 
 import styles from './ExpenseAdd.module.scss';
@@ -120,38 +121,38 @@ const ExpenseAdd = props => {
     <React.Fragment>
       {toast.flag ? <Toast message={toast.message} type={toast.type} /> : null}
       <form className={styles['expense__form']} onSubmit={formSubmitHandler}>
-        <div className={styles['expense__form--item']}>
-          <label htmlFor="expense-name">Name</label>
-          <input
-            type="text"
-            placeholder="Enter expense name"
-            id="expense-name"
-            onChange={nameInputHandler}
-            value={nameState}
-          ></input>
-        </div>
+        <Input
+          label="Name"
+          input={{
+            type: 'text',
+            placeholder: 'Enter expense name',
+            id: 'expense-name',
+            value: nameState,
+          }}
+          onChange={nameInputHandler}
+        />
 
-        <div className={styles['expense__form--item']}>
-          <label htmlFor="expense-amount">Amount</label>
-          <input
-            type="number"
-            placeholder="Enter amount"
-            id="expense-amount"
-            onChange={amountInputHandler}
-            value={amountState}
-          ></input>
-        </div>
+        <Input
+          label="Amount"
+          input={{
+            type: 'number',
+            placeholder: 'Enter amount',
+            id: 'expense-amount',
+            value: amountState,
+          }}
+          onChange={amountInputHandler}
+        />
 
-        <div className={styles['expense__form--item']}>
-          <label htmlFor="expense-category">Category</label>
-          <input
-            type="text"
-            placeholder="Enter category"
-            id="expense-category"
-            onChange={categoryInputHandler}
-            value={categoryState}
-          ></input>
-        </div>
+        <Input
+          label="Category"
+          input={{
+            type: 'text',
+            placeholder: 'Enter category',
+            id: 'expense-category',
+            value: categoryState,
+          }}
+          onChange={categoryInputHandler}
+        />
 
         <div className={styles['expense__form--item']}>
           <label htmlFor="expense-type">Type</label>
@@ -161,15 +162,15 @@ const ExpenseAdd = props => {
           </select>
         </div>
 
-        <div className={styles['expense__form--item']}>
-          <label id="expense-date">Date</label>
-          <input
-            type="date"
-            id="expense-date"
-            onChange={dateInputHandler}
-            value={dateState}
-          ></input>
-        </div>
+        <Input
+          label="Date"
+          input={{
+            type: 'date',
+            id: 'expense-date',
+            value: dateState,
+          }}
+          onChange={dateInputHandler}
+        />
 
         <div className={styles['expense__form--item']}>
           <Button type="submit" className={styles['expense__form--submit']}>

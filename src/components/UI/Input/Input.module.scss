@@ -1,0 +1,33 @@
+.expense__form--item {
+  margin: 1.5rem 0;
+
+  label {
+    font-size: 1rem;
+
+    @media only screen and (max-width: 30em) {
+      font-size: 0.8rem;
+    }
+  }
+  input,
+  select {
+    background: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    color: var(--color-dark);
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    padding: 1rem 0.7rem;
+    transition: background-color 0.5s;
+    width: -webkit-fill-available;
+
+    &:focus {
+      outline: 2px solid var(--color-1);
+    }
+
+    @media only screen and (max-width: 30em) {
+      padding: 0.7rem;
+      font-size: 0.8rem;
+    }
+  }
+}
