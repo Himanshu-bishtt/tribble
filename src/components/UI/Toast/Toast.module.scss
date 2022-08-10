@@ -10,6 +10,7 @@
   opacity: 0;
   transition: all 0.5s;
   z-index: 9;
+  animation: slide 600ms ease forwards;
 
   @media only screen and (max-width: 30em) {
     font-size: 0.7rem;
@@ -25,4 +26,18 @@
 .toast.error {
   opacity: 1;
   border-left: 4px solid red;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(5rem);
+  }
+
+  50% {
+    transform: translate(-1rem);
+  }
+
+  100% {
+    transform: translate(0);
+  }
 }
