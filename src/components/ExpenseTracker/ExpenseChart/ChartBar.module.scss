@@ -5,11 +5,6 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  cursor: pointer;
-}
-
-.chart-bar:hover > .chart-bar__value {
-  opacity: 1;
 }
 
 .chart-bar__inner {
@@ -17,7 +12,7 @@
   width: 100%;
   border: 1px solid #313131;
   border-radius: 12px;
-  background-color: #c3b4f3;
+  background-color: var(--color-dark);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -25,19 +20,24 @@
 }
 
 .chart-bar__fill {
-  background-color: #4826b9;
+  background-color: var(--color-grey-1);
   width: 100%;
-  transition: all 0.5s ease-out;
+  transition: all 1.5s ease-out;
 }
 
 .chart-bar__value {
   position: absolute;
-  top: -10%;
+  top: 50%;
   font-size: 0.7rem;
   font-weight: bold;
-  opacity: 0;
+  transform: rotate(270deg);
   transition: all 0.5s;
   border-radius: 10px;
+
+  @media only screen and (max-width: 30em) {
+    font-size: 0.5rem;
+    font-weight: 500;
+  }
 }
 
 .chart-bar__label {

@@ -17,7 +17,9 @@ const ChartBar = props => {
           style={{ height: barFillPercent }}
         ></div>
       </div>
-      <div className={styles['chart-bar__value']}>{props.value}</div>
+      {props.value !== 0 && (
+        <div className={styles['chart-bar__value']}>${props.value}</div>
+      )}
       <div className={styles['chart-bar__label']}>{props.label}</div>
     </div>
   );

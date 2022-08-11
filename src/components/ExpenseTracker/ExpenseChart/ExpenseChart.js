@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './ExpenseChart.module.scss';
+
 import Chart from './Chart';
 
 const ExpenseChart = props => {
@@ -33,7 +35,12 @@ const ExpenseChart = props => {
     }
   });
 
-  return <Chart dataPoints={chartDataPoints} maxValue={maxValue} />;
+  return (
+    <div className={styles['expense-chart']}>
+      <div className={styles['expense-chart__heading']}>Expense Chart</div>
+      <Chart dataPoints={chartDataPoints} maxValue={maxValue} />
+    </div>
+  );
 };
 
 export default ExpenseChart;

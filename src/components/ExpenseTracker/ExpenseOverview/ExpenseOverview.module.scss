@@ -4,13 +4,14 @@
 }
 
 .expense__overview--data {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  justify-items: center;
 
   @media only screen and (max-width: 30em) {
+    display: flex;
     flex-direction: column;
-    row-gap: 4rem;
+    align-items: center;
+    row-gap: 2rem;
   }
 }

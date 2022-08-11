@@ -7,4 +7,10 @@
   justify-content: space-around;
   height: 15rem;
   width: 35rem;
+
+  @media only screen and (max-width: 30em) {
+    width: 20rem;
+    height: 10rem;
+    padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+  }
 }
