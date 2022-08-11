@@ -5,7 +5,7 @@ import styles from './ExpenseRecentTransactions.module.scss';
 
 const ExpenseRecentTransactions = props => {
   return (
-    <React.Fragment>
+    <div>
       <div className={styles['expense__transactions--heading']}>
         5 Recent Transactions
       </div>
@@ -30,7 +30,7 @@ const ExpenseRecentTransactions = props => {
           })
         )}
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

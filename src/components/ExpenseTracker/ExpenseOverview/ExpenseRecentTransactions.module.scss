@@ -1,7 +1,7 @@
 .expense__transactions--heading {
   font-size: 2rem;
   font-weight: bold;
-  margin: 3rem 0rem;
+  margin: 2rem 0rem;
   text-align: center;
   color: var(--color-1);
 
@@ -16,12 +16,11 @@
   width: 25rem;
   overflow-y: scroll;
   padding: 0rem 1rem;
-  margin-bottom: 10rem;
   padding-top: 2rem;
 
   @media only screen and (max-width: 30em) {
     width: 18rem;
-    margin-bottom: 7rem;
+    margin-bottom: 0rem;
   }
 }
 

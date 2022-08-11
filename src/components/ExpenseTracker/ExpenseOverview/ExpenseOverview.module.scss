@@ -2,3 +2,15 @@
   display: flex;
   flex-direction: column;
 }
+
+.expense__overview--data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4rem;
+
+  @media only screen and (max-width: 30em) {
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+}

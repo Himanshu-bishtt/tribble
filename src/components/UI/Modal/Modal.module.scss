@@ -3,7 +3,6 @@
   position: fixed;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
   padding: 2rem 1rem;
   width: 20rem;
   display: flex;
@@ -13,6 +12,7 @@
   align-items: center;
   border-radius: 10px;
   z-index: 100;
+  animation: slide-down 300ms ease forwards;
 
   @media only screen and (max-width: 30em) {
     top: 40%;
@@ -48,5 +48,15 @@
   @media only screen and (max-width: 30em) {
     font-size: 0.7rem;
     padding: 0.5rem 0.8rem;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translate(-50%, -70%);
+  }
+
+  to {
+    transform: translate(-50%, -50%);
   }
 }
