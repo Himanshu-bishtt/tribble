@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ExpenseContext from '../../../store/ExpenseContext';
 
 import icons from '../../../static/icons/icons.svg';
 import styles from './ExpenseSummary.module.scss';
 
 const ExpenseSummary = props => {
-  const income = props.transactions.reduce((prev, cur) => {
+  const expenseCtx = useContext(ExpenseContext);
+
+  const income = expenseCtx.transactions.reduce((prev, cur) => {
     return cur.type === 'Income' ? prev + +cur.amount : prev;
   }, 0);
 
-  const expense = props.transactions.reduce((prev, cur) => {
+  const expense = expenseCtx.transactions.reduce((prev, cur) => {
     return cur.type === 'Expense' ? prev + +cur.amount : prev;
   }, 0);
 

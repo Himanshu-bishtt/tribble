@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ExpenseTransactionItem from './ExpenseTransactionItem';
+import ExpenseContext from '../../../store/ExpenseContext';
 
 import styles from './ExpenseRecentTransactions.module.scss';
 
-const ExpenseRecentTransactions = props => {
+const ExpenseRecentTransactions = () => {
+  const expenseCtx = useContext(ExpenseContext);
+
   return (
     <div>
       <div className={styles['expense__transactions--heading']}>
         5 Recent Transactions
       </div>
       <div className={styles['expense__transactions']}>
-        {props.transactions.length === 0 ? (
+        {expenseCtx.transactions.length === 0 ? (
           <p className={styles['expense__transactions--empty']}>No items</p>
         ) : (
-          props.transactions.map((transaction, index) => {
+          expenseCtx.transactions.map((transaction, index) => {
             if (index <= 4) {
               return (
                 <ExpenseTransactionItem

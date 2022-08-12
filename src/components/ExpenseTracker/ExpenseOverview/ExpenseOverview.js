@@ -5,13 +5,13 @@ import ExpenseChart from '../ExpenseChart/ExpenseChart';
 
 import styles from './ExpenseOverview.module.scss';
 
-const ExpenseOverview = props => {
+const ExpenseOverview = () => {
   return (
     <div className={styles['expense__overview']}>
-      <ExpenseSummary transactions={props.transactions} />
+      <ExpenseSummary />
       <div className={styles['expense__overview--data']}>
-        <ExpenseRecentTransactions transactions={props.transactions} />
-        <ExpenseChart transactions={props.transactions} />
+        <ExpenseRecentTransactions />
+        <ExpenseChart />
       </div>
     </div>
   );

@@ -10,8 +10,7 @@ const Expense = () => {
 
   let content = '';
 
-  if (expenseCtx.expenseContent === 1)
-    content = <ExpenseOverview transactions={expenseCtx.transactions} />;
+  if (expenseCtx.expenseContent === 1) content = <ExpenseOverview />;
   if (expenseCtx.expenseContent === 2)
     content = <ExpenseAdd addExpenseHandler={expenseCtx.addExpenseHandler} />;
   if (expenseCtx.expenseContent === 3) console.log('Profile');

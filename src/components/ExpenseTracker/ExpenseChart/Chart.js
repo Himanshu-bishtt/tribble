@@ -4,6 +4,10 @@ import ChartBar from './ChartBar';
 import styles from './Chart.module.scss';
 
 const Chart = props => {
+  const expenseYearChangeHandler = event => {
+    props.onChange(+event.target.value);
+  };
+
   return (
     <div className={styles['chart']}>
       <div className={styles['chart__info']}>
@@ -12,10 +16,10 @@ const Chart = props => {
           <p>{`Min value: $${props.minValue}`}</p>
         </div>
 
-        <select>
-          <option>2022</option>
-          <option>2021</option>
-          <option>2020</option>
+        <select onChange={expenseYearChangeHandler}>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
         </select>
       </div>
       <div className={styles['chart__items']}>
