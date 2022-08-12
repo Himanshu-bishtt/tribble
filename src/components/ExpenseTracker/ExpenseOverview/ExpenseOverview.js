@@ -1,9 +1,9 @@
 import React from 'react';
+import ExpenseSummary from './ExpenseSummary';
+import ExpenseRecentTransactions from './ExpenseRecentTransactions';
 import ExpenseChart from '../ExpenseChart/ExpenseChart';
 
 import styles from './ExpenseOverview.module.scss';
-import ExpenseRecentTransactions from './ExpenseRecentTransactions';
-import ExpenseSummary from './ExpenseSummary';
 
 const ExpenseOverview = props => {
   return (

@@ -10,9 +10,9 @@
 .chart-bar__inner {
   height: 100%;
   width: 100%;
-  border: 1px solid #313131;
+  border: 1px solid #242424;
   border-radius: 12px;
-  background-color: var(--color-dark);
+  background-color: #19414b;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
 }
 
 .chart-bar__fill {
-  background-color: var(--color-grey-1);
+  background-color: #5a7e8ffb;
   width: 100%;
   transition: all 1.5s ease-out;
 }

@@ -6,6 +6,7 @@ import Chart from './Chart';
 
 const ExpenseChart = props => {
   let maxValue = 0;
+  let minValue = props.transactions[0].amount;
 
   const chartDataPoints = [
     { label: 'Jan', value: 0 },
@@ -27,18 +28,23 @@ const ExpenseChart = props => {
 
     chartDataPoints[transactionMonth].value += +transaction.amount;
 
-    console.log(transaction.amount);
-    console.log(maxValue);
-
     if (+transaction.amount > maxValue) {
       maxValue = transaction.amount;
+    }
+
+    if (+transaction.amount < minValue) {
+      minValue = transaction.amount;
     }
   });
 
   return (
     <div className={styles['expense-chart']}>
       <div className={styles['expense-chart__heading']}>Expense Chart</div>
-      <Chart dataPoints={chartDataPoints} maxValue={maxValue} />
+      <Chart
+        dataPoints={chartDataPoints}
+        maxValue={maxValue}
+        minValue={minValue}
+      />
     </div>
   );
 };
