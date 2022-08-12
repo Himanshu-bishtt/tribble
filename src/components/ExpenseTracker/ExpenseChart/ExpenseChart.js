@@ -1,17 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Chart from './Chart';
 import ExpenseContext from '../../../store/ExpenseContext';
 
 import styles from './ExpenseChart.module.scss';
 
 const ExpenseChart = () => {
+  const [expenseYear, setExpenseYear] = useState(2022);
+
   const expenseCtx = useContext(ExpenseContext);
 
-  console.log(expenseCtx);
+  const expenseYearHandler = year => {
+    setExpenseYear(year);
+  };
 
-  let maxValue = 0;
-  // let minValue = props.transactions[0].amount;
-  let minValue = 0;
+  const selectedYearExpenses = expenseCtx.transactions.filter(
+    transaction => new Date(transaction.date).getFullYear() === expenseYear
+  );
 
   const chartDataPoints = [
     { label: 'Jan', value: 0 },
@@ -28,7 +32,17 @@ const ExpenseChart = () => {
     { label: 'Dec', value: 0 },
   ];
 
-  expenseCtx.transactions.forEach(transaction => {
+  let maxValue = 0;
+  let minValue = 0;
+
+  selectedYearExpenses.forEach((transaction, index) => {
+    /**
+     * Setting inital value for minValue variable
+     */
+    if (index === 0) {
+      minValue = +transaction.amount;
+    }
+
     const transactionMonth = new Date(transaction.date).getMonth();
 
     chartDataPoints[transactionMonth].value += +transaction.amount;
@@ -42,10 +56,6 @@ const ExpenseChart = () => {
     }
   });
 
-  const expenseYearHandler = year => {
-    console.log(year);
-  };
-
   return (
     <div className={styles['expense-chart']}>
       <div className={styles['expense-chart__heading']}>Expense Chart</div>
@@ -54,6 +64,7 @@ const ExpenseChart = () => {
         maxValue={maxValue}
         minValue={minValue}
         onChange={expenseYearHandler}
+        expenseYear={expenseYear}
       />
     </div>
   );

@@ -31,7 +31,7 @@
   font-size: 0.7rem;
   font-weight: bold;
   transform: rotate(270deg);
-  transition: all 0.5s;
+  animation: show 1s ease;
   border-radius: 10px;
 
   @media only screen and (max-width: 30em) {
@@ -44,4 +44,19 @@
   font-weight: bold;
   font-size: 0.7rem;
   text-align: center;
+
+  @media only screen and (max-width: 30em) {
+    font-size: 0.5rem;
+    font-weight: 500;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
