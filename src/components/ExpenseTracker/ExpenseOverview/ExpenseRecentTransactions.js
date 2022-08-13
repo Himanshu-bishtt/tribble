@@ -7,14 +7,25 @@ import styles from './ExpenseRecentTransactions.module.scss';
 const ExpenseRecentTransactions = () => {
   const expenseCtx = useContext(ExpenseContext);
 
+  const transactionsLength = expenseCtx.transactions.length;
+
   return (
     <div>
       <div className={styles['expense__transactions--heading']}>
         5 Recent Transactions
       </div>
-      <div className={styles['expense__transactions']}>
-        {expenseCtx.transactions.length === 0 ? (
-          <p className={styles['expense__transactions--empty']}>No items</p>
+      <div
+        className={styles['expense__transactions']}
+        style={
+          transactionsLength <= 2
+            ? { height: 'max-content' }
+            : { height: '20rem' }
+        }
+      >
+        {transactionsLength === 0 ? (
+          <p className={styles['expense__transactions--empty']}>
+            No transactions
+          </p>
         ) : (
           expenseCtx.transactions.map((transaction, index) => {
             if (index <= 4) {
