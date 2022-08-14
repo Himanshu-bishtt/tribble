@@ -17,8 +17,10 @@ const ExpenseModal = props => {
             props.data.length <= 3
               ? { height: 'max-content' }
               : { height: '25rem' }}>
-          {props.data.map(transaction => (
-            <ExpenseTransactionItem className={styles['expense__modal--item']} key={transaction.id} name={transaction.name} date={transaction.date} time={transaction.time} amount={transaction.amount} category={transaction.category} type={transaction.type}/>
+          {props.data.length === 0 
+            ? <p>No items</p> 
+            : props.data.map(transaction => (
+                <ExpenseTransactionItem className={styles['expense__modal--item']} key={transaction.id} name={transaction.name} date={transaction.date} time={transaction.time} amount={transaction.amount} category={transaction.category} type={transaction.type}/>
           ))}
         </ul>
         {/* prettier-ignore */}
