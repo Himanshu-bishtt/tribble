@@ -1,0 +1,96 @@
+.expense__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: var(--color-dark-1);
+  z-index: 99;
+  border-radius: 10px;
+  animation: slide-down 1s ease;
+
+  @media only screen and (max-width: 75em) {
+    width: 65%;
+    padding: 1.5rem;
+  }
+
+  @media only screen and (max-width: 30em) {
+    width: 80%;
+    padding: 1.5rem 1rem;
+  }
+}
+
+.expense__modal--button {
+  position: absolute;
+  top: -4%;
+  right: -4%;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--color-white);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50%;
+
+  @media only screen and (max-width: 50em) {
+    top: -4%;
+    right: -5%;
+    font-size: 0.8rem;
+  }
+}
+
+.expense__modal--list {
+  height: 20rem;
+  padding: 0rem 1rem;
+  overflow-y: scroll;
+
+  @media only screen and (max-width: 30em) {
+    padding-right: 1rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--color-white);
+    background-color: transparent;
+
+    @media only screen and (max-width: 50em) {
+      width: 5px;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #888;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.expense__modal--item {
+  padding: 1.2rem 2rem;
+  background-color: var(--color-dark);
+  border-radius: 10px;
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
+  border-left: 5px solid green;
+  margin: 1.5rem 0;
+
+  @media only screen and (max-width: 50em) {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (max-width: 30em) {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(2rem) translate(-50%, -50%);
+  }
+
+  to {
+    transform: translateY(0) translate(-50%, -50%);
+  }
+}

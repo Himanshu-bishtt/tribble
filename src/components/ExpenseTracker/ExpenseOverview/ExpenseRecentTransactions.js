@@ -14,20 +14,16 @@ const ExpenseRecentTransactions = () => {
       <div className={styles['expense__transactions--heading']}>
         5 Recent Transactions
       </div>
+      {/* prettier-ignore */}
       <div
         className={styles['expense__transactions']}
-        style={
-          transactionsLength <= 2
+        style={ transactionsLength <= 2
             ? { height: 'max-content' }
             : { height: '20rem' }
-        }
-      >
-        {transactionsLength === 0 ? (
-          <p className={styles['expense__transactions--empty']}>
-            No transactions
-          </p>
-        ) : (
-          expenseCtx.transactions.map((transaction, index) => {
+            }>
+        {transactionsLength === 0 
+        ? ( <p className={styles['expense__transactions--empty']}> No transactions </p>) 
+        : (expenseCtx.transactions.map((transaction, index) => {
             if (index <= 4) {
               return (
                 <ExpenseTransactionItem

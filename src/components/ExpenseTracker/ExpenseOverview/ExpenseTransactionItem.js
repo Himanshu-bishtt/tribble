@@ -8,7 +8,7 @@ const ExpenseTransactionItem = props => {
     <div
       className={`${styles['transaction__item']} ${
         props.type === 'Income' ? styles['income'] : styles['expense']
-      }`}
+      } ${props.className}`}
     >
       <svg className={styles['transaction__item--icon']}>
         <use href={`${icons}#icon-truck`}></use>

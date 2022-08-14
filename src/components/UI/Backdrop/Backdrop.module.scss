@@ -7,4 +7,15 @@
   // backdrop-filter: blur(5px);
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 99;
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
