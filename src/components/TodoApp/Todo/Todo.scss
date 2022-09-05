@@ -2,11 +2,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   justify-items: center;
-  row-gap: 2rem;
+  row-gap: 5rem;
   padding: 2rem 0 10rem 0;
-  margin: 0rem 3rem;
+  margin: 0rem 2rem;
 
-  @media only screen and (max-width: 37.75em) {
+  @media only screen and (min-width: 32.75em) and (max-width: 37.75em) {
     margin: 0 1rem;
   }
 
